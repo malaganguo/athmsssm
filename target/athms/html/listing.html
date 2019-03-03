@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+    <title>686 Adminize</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Le styles -->
+    <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/admin.css" rel="stylesheet">
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>    
+<body>
+
+<div class="container">
+		
+	<div class="row">
+
+		<div class="span2">
+
+			<div class="main-left-col">
+
+				<h1><i class="icon-shopping-cart icon-large"></i> 张毅飞</h1>
+
+				<ul class="side-nav">
+
+					<li>
+						<a href="index.html"><i class="icon-home"></i> 首页</a>
+					</li>
+					<li class="dropdown active ">
+						<a class="dropdown-toggle" data-toggle="collapse" data-target="#website-dropdown" href="#"><i class="icon-sitemap"></i> 数据查询 <b class="caret"></b></a>
+						<ul id="website-dropdown" class="collapse">
+							<li class="active"><a href="listing.html">温度数据</a></li>
+							<li><a href="listing.html">湿度数据</a></li>
+						</ul>
+					</li>
+					<!--<li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#store-dropdown" href="#"><i class="icon-shopping-cart"></i> 数据统计 <b class="caret"></b></a>
+                        <ul id="store-dropdown" class="collapse">
+                            <li><a href="listing.html">Catalogue</a></li>
+                            <li><a href="orders.html">Orders</a></li>
+                            <li><a href="listing.html">Enquiries</a></li>
+                        </ul>
+                    </li>-->
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="collapse" data-target="#reports-dropdown" href="#"><i class="icon-signal"></i> 数据统计 <b class="caret"></b></a>
+						<ul id="reports-dropdown" class="collapse">
+							<li><a href="report.html">Sales Reports</a></li>
+							<li><a href="report.html">Product Popularity</a></li>
+							<li><a href="report.html">Member Registrations</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="collapse" data-target="#members-dropdown" href="#"><i class="icon-group"></i> 权限管理 <b class="caret"></b></a>
+						<ul id="members-dropdown" class="collapse">
+							<li><a href="listing.html">Members</a></li>
+							<li><a href="listing.html">User Groups</a></li>
+							<li><a href="listing.html">Permissions</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="collapse" data-target="#settings-dropdown" href="#"><i class="icon-cogs"></i> 系统设置 <b class="caret"></b></a>
+						<ul id="settings-dropdown" class="collapse">
+							<li><a href="listing.html">Payment Processors</a></li>
+							<li><a href="listing.html">Order Statuses</a></li>
+							<li><a href="listing.html">Shipping Methods</a></li>
+							<li><a href="listing.html">Emails</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><i class="icon-bullhorn"></i> 通知 <span class="badge badge-warning">2</span></a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="collapse" data-target="#help-dropdown" href="#"><i class="icon-info-sign"></i> 帮助 <b class="caret"></b></a>
+						<ul id="help-dropdown" class="collapse">
+							<li><a href="content.html">FAQ</a></li>
+							<li class="active"><a href="content.html">User Guide</a></li>
+							<li><a href="content.html">Support</a></li>
+						</ul>
+					</li>
+				</ul>
+
+			</div> <!-- end main-left-col -->
+
+		</div> <!-- end span2 -->
+	
+	<div class="span10">
+
+		<div class="secondary-masthead">
+
+			<ul class="nav nav-pills pull-right">
+				<li>
+					<a href="http://www.xiyou.edu.cn/"><i class="icon-globe"></i> <V></V>西安邮电大学</a>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> 张毅飞 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="profile.html">个人资料</a></li>
+						<li><a href="form.html">用户设置</a></li>
+						<li class="divider"></li>
+						<li><a href="">注销</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">数据查询</a> <span class="divider">/</span>
+				</li>
+				<li class="active">温度数据</li>
+			</ul>
+
+		</div>
+	
+	<div class="main-area dashboard">
+	
+			<div class="alert alert-info">
+				<a class="close" data-dismiss="alert" href="#">x</a>
+				<h4 class="alert-heading">Information</h4>
+				The listing template can be used to list content that requires editing, such as pages, product catalogue, settings and members.
+			</div>
+			
+			<div class="row">
+			
+				<div class="span10">
+				
+					<div class="slate">
+					
+						<form class="form-inline">
+							<input type="text" class="input-large" placeholder="Keyword...">
+							<select class="span2">
+								<option value=""> - From Date - </option>
+							</select>
+							<select class="span2">
+								<option value=""> - To Date - </option>
+							</select>
+							<select class="span2">
+								<option value=""> - Filter - </option>
+							</select>
+							<button type="submit" class="btn btn-primary">Filter Listings</button>
+						</form>
+					
+					</div>
+				
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				
+				<div class="span10 listing-buttons">
+				
+					<button class="btn btn-info">Action</button>
+				
+					<button class="btn btn-success">Action</button>
+				
+					<button class="btn btn-primary">Add New Item</button>
+				
+				</div>
+				
+				<div class="span10">
+				
+					<div class="slate">
+					
+						<div class="page-header">
+							<div class="btn-group pull-right">
+								<button class="btn dropdown-toggle" data-toggle="dropdown">
+									<i class="icon-download-alt"></i> Export
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="">CSV</a></li>
+									<li><a href="">Excel</a></li>
+									<li><a href="">PDF</a></li>
+								</ul>
+							</div>
+							<h2>Listings</h2>
+						</div>
+					
+						<table class="orders-table table">
+						<thead>
+							<tr>
+								<th>Listing</th>
+								<th class="actions">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a href="form.html">Listing title</a> <span class="label label-info">Item Status</span><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a> <span class="label label-warning">Item Status</span><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a> <span class="label label-important">Item Status</span><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a> <span class="label label-inverse">Item Status</span><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a> <span class="label label-success">Item Status</span><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a> <span class="label">Item Status</span><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="form.html">Listing title</a><br /><span class="meta">Added Today</span></td>
+								<td class="actions">
+									<a class="btn btn-small btn-danger" data-toggle="modal" href="#removeItem">Remove</a>
+									<a class="btn btn-small btn-primary" href="form.html">Edit</a>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+					</div>
+				
+				</div>
+				
+				<div class="modal hide fade" id="removeItem">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3>Remove Item</h3>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you would like to remove this item?</p>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn" data-dismiss="modal">Close</a>
+						<a href="#" class="btn btn-danger">Remove</a>
+					</div>
+				</div>
+			
+				<div class="span5">
+				
+					<div class="pagination pull-left">
+						<ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						</ul>
+					</div>
+				
+				</div>
+				
+				<div class="span5 listing-buttons pull-right">
+				
+					<button class="btn btn-info">Action</button>
+				
+					<button class="btn btn-success">Action</button>
+				
+					<button class="btn btn-primary">Add New Item</button>
+				
+				</div>
+				
+			</div>
+			
+		<div class="row">
+		
+			<div class="span10 footer">
+			
+				<p>&copy; Website Name 2014</p>
+			
+			</div>
+		
+		</div>
+		
+	</div>
+	
+	</div> <!-- end span10 -->
+		
+	</div> <!-- end row -->
+		
+</div> <!-- end container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.js"></script>
+
+
+</body>
+</html>

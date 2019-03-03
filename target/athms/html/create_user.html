@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>农业管理系统——创建用户</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/admin.css" rel="stylesheet">
+	<link href="../assets/css/aloha.css" rel="stylesheet">
+
+    
+       
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!--导航栏开始-->
+        <div class="span2">
+
+            <div class="main-left-col">
+
+                <h1><img src="../assets/img/logo70-60.png" onerror="加载失败"></h1>
+
+                <ul class="side-nav">
+
+                    <li>
+                        <a href="index.html"><i class="icon-home"></i> 首页</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" href="data_query.html"><i
+                                class="icon-sitemap"></i> 数据查询 </a>
+
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#data-analysis" href="#"><i
+                                class="icon-signal"></i> 数据分析 <b class="caret"></b></a>
+                        <ul id="data-analysis" class="collapse">
+                          	<li><a href="analysis-site.html">监测点分析</a></li>
+						  	<li><a href="temperaturep-site.html">数据类型分析</a></li>
+						  	<li><a href="time-site.html">时段分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#members-dropdown" href="#"><i
+                                class="icon-group"></i> 权限管理 <b class="caret"></b></a>
+                        <ul id="members-dropdown" class="collapse">
+                            <li class="active"><a href="create_user.html">创建用户</a></li>
+                            <li><a href="listing.html">访问权限</a></li>
+                            <li><a href="listing.html">管理员名单</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#settings-dropdown" href="#"><i
+                                class="icon-cogs"></i> 系统配置 <b class="caret"></b></a>
+                        <ul id="settings-dropdown" class="collapse">
+                            <li><a href="listing.html">监测点管理</a></li>
+                            <li><a href="listing.html">区域划分</a></li>
+                            <li><a href="listing.html">操作日志</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="icon-bullhorn"></i> 通知 <span class="badge badge-warning">2</span></a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#help-dropdown" href="#"><i
+                                class="icon-info-sign"></i> 帮助 <b class="caret"></b></a>
+                        <ul id="help-dropdown" class="collapse">
+                            <li><a href="content.html">使用手册</a></li>
+                            <li class="active"><a href="content.html">技术说明</a></li>
+                            <li><a href="content.html">支持</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div> <!-- end main-left-col -->
+
+        </div>
+        <!-- 导航栏结束 -->
+
+        <!--正文开始-->
+        <div class="span10">
+            <!--第二报头开始-->
+            <div class="secondary-masthead">
+
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a href="http://www.xiyou.edu.cn/"><i class="icon-globe"></i>
+                            <v></v>
+                            西安邮电大学</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> 张毅飞 <b
+                                class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html">个人资料</a></li>
+                            <li><a href="form.html">用户设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">注销</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html">首页</a> <span class="divider">/</span>
+                    </li>
+                    <li class="active">数据分析</li> <span class="divider">/</span>
+                    <li class=""><a href="analysis-site.html">监测点分析</a></li>
+                </ul>
+
+            </div>
+            <!--第二报头结束-->
+
+            <!--主仪表盘开始-->
+            <div class="main-area dashboard">
+              <div class="row">
+                    <div class="slate">
+                       <form>
+                            
+                        </form>
+                    </div>
+                  
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.js"></script>
+<script src="../assets/js/excanvas.min.js"></script>
+<script src="../assets/js/jquery.flot.min.js"></script>
+<script src="../assets/js/jquery.flot.resize.js"></script>
+    
+<!--highcharts的图标引入-->
+<script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/data.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/series-label.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/oldie.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/themes/dark-unica.js"></script>
+<script src="../assets/js/highcharts/histogram-chart.js" ></script>
+</body>
+</html>
