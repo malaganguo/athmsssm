@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.malaganguo.athmsssm.dao.IUserLoginDao">
+    <select id="userLoginCheck" resultType="com.malaganguo.athmsssm.model.User" parameterType="String" >
+        SELECT * FROM user WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <insert id="userRegister"  parameterType="com.malaganguo.athmsssm.model.User">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO user(username,password,email,role,status,regTime,regIp) VALUES( #{username} , #{password} , #{email} , "part" , 0 , "2017-03-28 09:40:31" , "127.0.0.1")
+    </insert>
+</mapper>

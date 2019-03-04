@@ -1,6 +1,7 @@
 package com.malaganguo.athmsssm.test;
 
 import com.malaganguo.athmsssm.dao.IUserDao;
+import com.malaganguo.athmsssm.dao.IUserLoginDao;
 import com.malaganguo.athmsssm.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +14,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class IUserDaoTest {
     @Autowired
     private IUserDao dao;
+
+    @Autowired
+    private IUserLoginDao userLoginDao;
 
     @Test
     public void testSelectUser() throws Exception {
