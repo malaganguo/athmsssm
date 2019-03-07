@@ -7,6 +7,11 @@
   <display-name>ATHMS(Agriculture Temperature Humidity Management System 农业温湿度管理系统)</display-name>
   <description>ATHMS_0.0.1</description>
 
+  <!--listener-->
+  <listener>
+    <listener-class>com.malaganguo.athmsssm.web.listener.ContextListener</listener-class>
+  </listener>
+  
   <!-- 编码过滤器 -->
   <filter>
     <filter-name>encodingFilter</filter-name>

@@ -5,6 +5,7 @@ import com.malaganguo.athmsssm.model.User;
 import com.malaganguo.athmsssm.service.impl.UserLoginServiceImpl;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,18 +17,22 @@ public class UserLoginController {
     private UserLoginServiceImpl userLoginService;
 
     @RequestMapping("/userLogin.action")
-    public ModelAndView userLogin(@Param("username")String username, @Param("password")String password){
+    public String userLogin(@Param("username")String username, @Param("password")String password, Model model){
 
         User user = userLoginService.findUser(username, password);
-        ModelAndView mav = new ModelAndView();
+     //   ModelAndView mav =new ModelAndView();
         if(user == null || user.equals(null)){
-            mav.setViewName("login");
+          //  mav.setViewName("login");
+            return "login";
+        } //else{
+        //    mav.setViewName("index");
+            // mav.addObject("user",user);
 
-        }else{
-            mav.setViewName("helloworld");
-        }
+            model.addAttribute("user", user);
+            return "index";
+       // }
 
-        return mav;
+      //  return mav;
     }
 
     @RequestMapping("/toUserRegister.action")

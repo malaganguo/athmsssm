@@ -13,6 +13,9 @@ public class User {
     private Date regTime;
     private String regIp;
 
+    public User() {
+    }
+
     public long getId() {
         return id;
     }
