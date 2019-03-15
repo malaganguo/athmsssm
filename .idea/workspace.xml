@@ -5,36 +5,54 @@
       <artifact name="athmsssm:war" />
     </artifacts-to-build>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java" line="27" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="3d26a09e-dc10-4ff9-bab2-04153fd8fdbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyw/serialPort/model/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/athms/jsp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/dependency.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/NewsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/INewsSpiderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/NewsSpiderUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/NewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/Spider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/TimerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/highcharts/realtime_interaction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/test/IUserDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/dao/IUserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/service/IUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/service/impl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/web/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQRecieve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQRecieve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/IUserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/IUserDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/athms.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/athms.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/classes/com/malaganguo/athmsssm/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/athms/WEB-INF/classes/com/malaganguo/athmsssm/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/classes/com/malaganguo/athmsssm/test/IUserDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/classes/com/malaganguo/athmsssm/web/controller/UserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/classes/com/malaganguo/athmsssm/web/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/athms/WEB-INF/classes/com/malaganguo/athmsssm/web/controller/UserLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-test-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/athms/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/athms/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/athms/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/test/IUserDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/web/controller/UserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/web/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/malaganguo/athmsssm/web/controller/UserLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/dao/IUserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/web/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/test/ActiveMQRecieve$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/test/ActiveMQRecieve$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/test/ActiveMQRecieve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/test/ActiveMQRecieve.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/test/IUserDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/malaganguo/athmsssm/test/IUserDaoTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,62 +66,88 @@
     <session id="-1300067910">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.100" value="1" />
+          <entry key="project.open.time.101" value="1" />
+          <entry key="project.open.time.106" value="1" />
           <entry key="project.open.time.108" value="1" />
+          <entry key="project.open.time.120" value="1" />
+          <entry key="project.open.time.124" value="1" />
+          <entry key="project.open.time.138" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.51" value="2" />
+          <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.57" value="1" />
+          <entry key="project.open.time.67" value="1" />
+          <entry key="project.open.time.73" value="1" />
+          <entry key="project.open.time.75" value="1" />
+          <entry key="project.open.time.83" value="1" />
           <entry key="project.open.time.86" value="1" />
           <entry key="project.open.time.87" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.93" value="1" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="15" />
-          <entry key="html" value="12" />
-          <entry key="java" value="57" />
-          <entry key="js" value="2" />
-          <entry key="jsp" value="15" />
-          <entry key="properties" value="4" />
+          <entry key="class" value="35" />
+          <entry key="html" value="14" />
+          <entry key="java" value="148" />
+          <entry key="js" value="9" />
+          <entry key="jsp" value="47" />
+          <entry key="properties" value="5" />
           <entry key="rnc" value="3" />
           <entry key="sql" value="3" />
-          <entry key="xml" value="35" />
+          <entry key="ts" value="4" />
+          <entry key="txt" value="1" />
+          <entry key="xml" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="15" />
-          <entry key="HTML" value="12" />
-          <entry key="JAVA" value="57" />
-          <entry key="JSP" value="15" />
-          <entry key="JavaScript" value="2" />
-          <entry key="Properties" value="4" />
+          <entry key="CLASS" value="35" />
+          <entry key="HTML" value="14" />
+          <entry key="JAVA" value="148" />
+          <entry key="JSP" value="47" />
+          <entry key="JavaScript" value="9" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="5" />
           <entry key="RNG Compact" value="3" />
           <entry key="SQL" value="3" />
-          <entry key="XML" value="35" />
+          <entry key="TypeScript" value="4" />
+          <entry key="XML" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="2" />
+          <entry key="dummy" value="10" />
           <entry key="html" value="11" />
-          <entry key="java" value="2731" />
-          <entry key="jsp" value="513" />
+          <entry key="java" value="6192" />
+          <entry key="js" value="347" />
+          <entry key="jsp" value="1849" />
           <entry key="properties" value="47" />
-          <entry key="xml" value="880" />
+          <entry key="xml" value="1170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="11" />
-          <entry key="JAVA" value="2731" />
-          <entry key="JSP" value="513" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JAVA" value="6192" />
+          <entry key="JSP" value="1849" />
+          <entry key="JavaScript" value="347" />
+          <entry key="PLAIN_TEXT" value="10" />
           <entry key="Properties" value="47" />
           <entry key="SQL" value="6" />
-          <entry key="XML" value="874" />
+          <entry key="XML" value="1164" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="1" />
+          <entry key="git.branch.checkout.remote" value="1" />
+          <entry key="git.branch.checkout.revision" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -111,10 +155,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            <state relative-caret-position="651">
+              <caret line="38" column="36" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,28 +167,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/User.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/NewsSpiderUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+            <state relative-caret-position="264">
+              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="250">
+              <caret line="325" column="38" lean-forward="true" selection-start-line="325" selection-start-column="38" selection-end-line="325" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/Spider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-575">
+              <caret line="121" column="41" lean-forward="true" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/NewsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,6 +237,7 @@
         <option value="HTML File" />
         <option value="Interface" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -168,10 +249,37 @@
       <find>@@@@@</find>
       <find>@@@</find>
       <find>real</find>
+      <find>aop</find>
+      <find>websocket/login.action</find>
+      <find>Before Handshake</find>
+      <find>send.action</find>
+      <find>login.action</find>
+      <find>123</find>
+      <find>mess</find>
+      <find>&lt;async-supported&gt;true&lt;/async-supported&gt;</find>
+      <find>activeMQ connectioned</find>
+      <find>onmessage</find>
+      <find>addPoint</find>
+      <find>csv</find>
+      <find>add</find>
+      <find>data.</find>
+      <find>random</find>
+      <find>align</find>
+      <find>jsonNews</find>
+      <find>1276592</find>
+      <find>data</find>
+      <find>timer started:</find>
+      <find>helloworld!</find>
+      <find>helloworld!!!</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="27be44c8b90d0c5f89b4f17d17267bbe73fb90fe" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
@@ -184,26 +292,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/athms/web/action/DoLogin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/malaganguo/athmsssm/web/action/DoLogin.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/service/IUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/web/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/IUserDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/dao/IUserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/idnex.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/dao/UserLoginDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/sql/athmsssm.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/error.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/test/IUserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserRegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/dao/IUserLoginDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/impl/UserLoginServiceImpl.java" />
@@ -212,16 +300,49 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserLogin.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/register_login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/highcharts/realTimedata.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lyw/serialPort/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/ActiveMQReceiveUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-base.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/test/test_login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/webSocket.jsp" />
+        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ContextListener.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQRecieve.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/TestConroller.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/test_login.jsp" />
+        <option value="$PROJECT_DIR$/doc/dependency.txt" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/MyHandshakeInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-websocket.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SpringWebSocketHandlerInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/WebsocketController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/MyWebSocketHander.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/websocket.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SpringWebSocketConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SendDataToWebThreadActiveMQ.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SpringWebSocketHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/ActiveMQCustomer.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/test.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.flot.threshold.min.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/highcharts/realtime_interaction.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/Spider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/NewsModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/INewsSpiderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js" />
+        <option value="$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/TimerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/NewsSpiderUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/NewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" />
       </list>
     </option>
   </component>
@@ -259,11 +380,23 @@
           <item name="athms Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="athms Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="org.springframework:spring-core:4.3.12.RELEASE" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="athms Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="org.springframework:spring-webmvc:4.3.12.RELEASE" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="165" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
@@ -313,8 +446,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -363,7 +494,74 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="listener" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.malaganguo.athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="push" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
@@ -409,7 +607,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
@@ -425,16 +632,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="athmsssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="athmsssm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,21 +655,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="E:/AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551959179766" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552625517915" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\athmsssm\src\main\webapp\jsp" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lyw.serialPort.model" />
-      <recent name="com.malaganguo.athmsssm.model" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.malaganguo.athmsssm.test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\athmsssm\src\main\webapp\jsp" />
@@ -464,6 +673,14 @@
       <recent name="D:\athmsssm\src\main\java" />
       <recent name="D:\athmsssm\src\main\webapp" />
       <recent name="D:\athmsssm\src\main\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.malaganguo.athmsssm.test" />
+      <recent name="com.lyw.serialPort.model" />
+      <recent name="com.malaganguo.athmsssm.model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\athmsssm\src\main\webapp\jsp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -478,7 +695,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ActiveMQRecieve">
+  <component name="RunManager" selected="Tomcat Server.athmsssm">
     <configuration name="ActiveMQRecieve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.test.ActiveMQRecieve" />
       <module name="athmsssm" />
@@ -492,8 +709,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActiveMQTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.test.ActiveMQTest" />
+    <configuration name="NewsSpiderUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.utils.NewsSpiderUtils" />
+      <module name="athmsssm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.malaganguo.athmsssm.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Spider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.test.Spider" />
       <module name="athmsssm" />
       <extension name="coverage">
         <pattern>
@@ -505,7 +735,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IUserDaoTest.testSelectUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.test.TimerTest" />
+      <module name="athmsssm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.malaganguo.athmsssm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimerTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="athmsssm" />
       <extension name="coverage">
         <pattern>
@@ -514,15 +757,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.malaganguo.athmsssm.test" />
-      <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.test.IUserDaoTest" />
-      <option name="METHOD_NAME" value="testSelectUser" />
+      <option name="MAIN_CLASS_NAME" value="com.malaganguo.athmsssm.test.TimerTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="athmsssm" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.2" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8086/athmsssm/" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -597,15 +839,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.athmsssm" />
-      <item itemvalue="JUnit.IUserDaoTest.testSelectUser" />
-      <item itemvalue="Application.ActiveMQTest" />
       <item itemvalue="Application.ActiveMQRecieve" />
+      <item itemvalue="Application.Spider" />
+      <item itemvalue="Application.NewsSpiderUtils" />
+      <item itemvalue="Application.TimerTest" />
+      <item itemvalue="JUnit.TimerTest.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Spider" />
+        <item itemvalue="JUnit.TimerTest.test" />
+        <item itemvalue="Application.TimerTest" />
+        <item itemvalue="Application.NewsSpiderUtils" />
         <item itemvalue="Application.ActiveMQRecieve" />
-        <item itemvalue="Application.ActiveMQTest" />
-        <item itemvalue="JUnit.IUserDaoTest.testSelectUser" />
       </list>
     </recent_temporary>
   </component>
@@ -626,13 +872,24 @@
       <workItem from="1551792314392" duration="1475000" />
       <workItem from="1551921241278" duration="4400000" />
       <workItem from="1551944152477" duration="6523000" />
+      <workItem from="1552027069640" duration="5763000" />
+      <workItem from="1552115786448" duration="1950000" />
+      <workItem from="1552123716008" duration="15810000" />
+      <workItem from="1552180283985" duration="13712000" />
+      <workItem from="1552228890880" duration="2785000" />
+      <workItem from="1552265798858" duration="5328000" />
+      <workItem from="1552289318249" duration="5276000" />
+      <workItem from="1552306986368" duration="5232000" />
+      <workItem from="1552356950284" duration="758000" />
+      <workItem from="1552436504421" duration="6074000" />
+      <workItem from="1552455655456" duration="1212000" />
+      <workItem from="1552480758880" duration="5302000" />
+      <workItem from="1552522801485" duration="30757000" />
+      <workItem from="1552610414569" duration="8620000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IUserDaoTest_testSelectUser - 2019.03.03 at 11h 48m 08s.xml">
-      <configuration name="IUserDaoTest.testSelectUser" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="IUserDaoTest_testSelectUser - 2019.03.03 at 11h 48m 46s.xml">
       <configuration name="IUserDaoTest.testSelectUser" configurationId="JUnit" />
     </history-entry>
@@ -645,15 +902,42 @@
     <history-entry file="IUserDaoTest_testSelectUser - 2019.03.03 at 23h 12m 20s.xml">
       <configuration name="IUserDaoTest.testSelectUser" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IUserDaoTest_testSelectUser - 2019.03.09 at 18h 56m 31s.xml">
+      <configuration name="IUserDaoTest.testSelectUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IUserDaoTest_testSelectUser - 2019.03.09 at 18h 59m 31s.xml">
+      <configuration name="IUserDaoTest.testSelectUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimerTest_test - 2019.03.14 at 22h 14m 09s.xml">
+      <configuration name="TimerTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimerTest_test - 2019.03.14 at 22h 19m 31s.xml">
+      <configuration name="TimerTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimerTest_test - 2019.03.14 at 22h 21m 12s.xml">
+      <configuration name="TimerTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimerTest_test - 2019.03.14 at 22h 21m 20s.xml">
+      <configuration name="TimerTest.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52226000" />
+    <option name="totallyTimeSpent" value="160805000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27882037" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24932976" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -663,44 +947,324 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39660057" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2733711" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.3385269" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8357909" weight="0.46033993" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.16420911" side_tool="true" weight="0.398017" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49932975" weight="0.15580736" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49932975" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="JSF" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3297587" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.47989276" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" weight="0.3297587" />
       <window_info anchor="right" id="Bean Validation" order="11" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3766756" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.49433428" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8357909" weight="0.46033993" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.16420911" side_tool="true" weight="0.398017" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49932975" weight="0.15580736" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49932975" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="JSF" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.47989276" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="CDI" order="10" weight="0.3297587" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.5.RELEASE/spring-websocket-4.3.5.RELEASE.jar!/org/springframework/web/socket/config/annotation/WebSocketHandlerRegistry.class</url>
+          <line>11</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="tdArr" language="JSP" />
+        <watch expression="elements" />
+        <watch expression="content" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="contentEncoding" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>tdArr</expression-string>
+        <language-id>JSP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>contentEncoding</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/error.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.12.RELEASE/spring-websocket-4.3.12.RELEASE.jar!/org/springframework/web/socket/handler/TextWebSocketHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.12.RELEASE/spring-websocket-4.3.12.RELEASE.jar!/org/springframework/web/socket/WebSocketSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.12.RELEASE/spring-websocket-4.3.12.RELEASE.jar!/org/springframework/web/socket/WebSocketMessage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SpringWebSocketHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.12.RELEASE/spring-webmvc-4.3.12.RELEASE.jar!/org/springframework/web/servlet/config/annotation/EnableWebMvc.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.12.RELEASE/spring-websocket-4.3.12.RELEASE.jar!/org/springframework/web/socket/server/HandshakeFailureException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.12.RELEASE/spring-websocket-4.3.12.RELEASE.jar!/org/springframework/web/socket/server/HandshakeHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.12.RELEASE/spring-websocket-4.3.12.RELEASE.jar!/org/springframework/web/socket/server/HandshakeInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/WebsocketController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SpringWebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/jdk1.8.0_141/src.zip!/java/io/InputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SendDataToWebThreadActiveMQ.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/jquery.flot.threshold.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="84" lean-forward="true" selection-start-column="84" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="4265" selection-start-line="2" selection-start-column="4265" selection-end-line="2" selection-end-column="4265" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/ActiveMQCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1325">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/7.0/javaee-api-7.0.jar!/javax/validation/Validation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/websocket.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="47" column="37" lean-forward="true" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/highcharts/realTimedata.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/push/SpringWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/highcharts/realtime_interaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://E:/jdk1.8.0_141/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-164">
+          <caret line="914" column="18" selection-start-line="914" selection-start-column="18" selection-end-line="914" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lyw/serialPort/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/NewsModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -711,356 +1275,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.1/mybatis-3.4.1.jar!/org/apache/ibatis/binding/MapperProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.5.RELEASE/spring-webmvc-4.3.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/INewsSpiderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/test/IUserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis-spring/1.3.1/mybatis-spring-1.3.1.jar!/org/mybatis/spring/SqlSessionFactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/helloworld.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test/test1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="591" column="22" selection-start-line="591" selection-start-column="22" selection-end-line="591" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserRegisterController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="25" column="57" lean-forward="true" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.5.RELEASE/spring-web-4.3.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/analysis-site.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="282" column="32" lean-forward="true" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/profile.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/vieworder.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/register_login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/impl/UserLoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/athmsssm.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/dao/IUserLoginDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/IUserLoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="50" />
+          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="283">
+          <caret line="13" column="76" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/7.0/javaee-api-7.0.jar!/javax/jms/ConnectionFactory.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/7.0/javaee-api-7.0.jar!/javax/jms/MessageProducer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3925">
-          <caret line="157" column="29" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/highcharts/realTimedata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3550">
-          <caret line="142" column="2" selection-start-line="142" selection-start-column="2" selection-end-line="142" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserLogin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1193#1194#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1281#1282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/7.0/javaee-api-7.0.jar!/javax/jms/ObjectMessage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/activemq/activemq-all/5.15.8/activemq-all-5.15.8.jar!/org/apache/activemq/ActiveMQConnectionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="45" column="81" lean-forward="true" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#40534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQRecieve.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/dao/IUserDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/IUserLoginService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/service/impl/UserLoginServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="150">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lyw/serialPort/model/Model.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/ActiveMQTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+        <state relative-caret-position="1175">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="300">
+          <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/jdk1.8.0_141/src.zip!/java/util/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="189" column="16" selection-start-line="189" selection-start-column="16" selection-end-line="189" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/TimerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="51" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#748#992#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="10628" column="13" selection-start-line="10628" selection-start-column="13" selection-end-line="10628" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575">
+          <caret line="121" column="41" lean-forward="true" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/com.malaganguo.athmsssm/test/Spider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/utils/NewsSpiderUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/listener/ContextListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/TestConroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/UserLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.malaganguo.athmsssm/web/controller/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="325" column="38" lean-forward="true" selection-start-line="325" selection-start-column="38" selection-end-line="325" selection-end-column="38" />
         </state>
       </provider>
     </entry>

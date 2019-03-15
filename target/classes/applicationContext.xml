@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/websocket
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd
+        http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+    <!-- 这个重点，标注必须加，websocket用到 -->
+    <!-- <mvc:annotation-driven /> -->
+    <context:component-scan base-package="com.malaganguo.athmsssm.web.push" />
+
+    <bean id="newsController" class="com.malaganguo.athmsssm.web.controller.NewsController"></bean>
+
+</beans>

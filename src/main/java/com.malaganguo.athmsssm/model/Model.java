@@ -1,9 +1,10 @@
 package com.malaganguo.athmsssm.model;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Model {
+public class Model implements Serializable {
     private String wholeDate;
     private String date;
     private String minutes;

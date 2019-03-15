@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 @Controller
 public class UserLoginController {
+
     @Resource
     private UserLoginServiceImpl userLoginService;
 
@@ -20,19 +22,12 @@ public class UserLoginController {
     public String userLogin(@Param("username")String username, @Param("password")String password, Model model){
 
         User user = userLoginService.findUser(username, password);
-     //   ModelAndView mav =new ModelAndView();
         if(user == null || user.equals(null)){
-          //  mav.setViewName("login");
             return "login";
-        } //else{
-        //    mav.setViewName("index");
-            // mav.addObject("user",user);
+        }
+        model.addAttribute("user", user);
+        return "main";
 
-            model.addAttribute("user", user);
-            return "index";
-       // }
-
-      //  return mav;
     }
 
     @RequestMapping("/toUserRegister.action")

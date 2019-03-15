@@ -1,6 +1,6 @@
 package com.malaganguo.athmsssm.test;
 
-import com.malaganguo.athmsssm.model.Model;
+import com.lyw.serialPort.model.Model;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
