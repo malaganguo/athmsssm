@@ -3,6 +3,7 @@ package com.malaganguo.athmsssm.service.impl;
 import com.malaganguo.athmsssm.dao.IUserLoginDao;
 import com.malaganguo.athmsssm.model.User;
 import com.malaganguo.athmsssm.service.IUserLoginService;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -10,6 +11,7 @@ import javax.annotation.Resource;
 @Service
 public class UserLoginServiceImpl implements IUserLoginService {
 
+    private static final Logger LOGGER = Logger.getLogger(UserLoginServiceImpl.class);
     @Resource
     private IUserLoginDao userLoginDao;
 
@@ -21,7 +23,7 @@ public class UserLoginServiceImpl implements IUserLoginService {
            user = userLoginDao.userLoginCheck(username, password);
 
         }catch (Exception e){
-            System.out.println("##login fail，cause by:"+e.getMessage());
+            LOGGER.debug("##login fail，cause by:"+e.getMessage());
             e.printStackTrace();
             return null;
         }

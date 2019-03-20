@@ -5,15 +5,11 @@
   Time: 13:04
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    response.setCharacterEncoding("utf-8");
-    response.setHeader("utf-8","iso-8859-1");
-    request.setCharacterEncoding("utf-8");
-%>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>农业管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -55,65 +51,8 @@
 <body>
 <div class="container">
     <div class="row">
-        <!--导航栏开始-->
-        <div class="span2">
-            <div class="main-left-col">
-                <h1><img src="../assets/img/logo70-60.png" onerror="加载失败"></h1>
-                <ul class="side-nav">
-                    <li class="active"><a href="index.html"><i class="icon-home"></i> 首页</a></li>
-                    <li><a class="dropdown-toggle" data-toggle="collapse" data-target="#website-dropdown"
-                           href="data_query.html"><em class="icon-sitemap"></em> 数据查询 </a></li>
-                    <!--<li class="dropdown">
-                                  <a class="dropdown-toggle" data-toggle="collapse" data-target="#store-dropdown" href="#"><i class="icon-shopping-cart"></i> 数据统计 <b class="caret"></b></a>
-                                  <ul id="store-dropdown" class="collapse">
-                                      <li><a href="listing.html">Catalogue</a></li>
-                                      <li><a href="orders.html">Orders</a></li>
-                                      <li><a href="listing.html">Enquiries</a></li>
-                                  </ul>
-                              </li>-->
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
-                                            data-target="#reports-dropdown" href="#"><i
-                            class="icon-signal"></i> 数据分析 <b class="caret"></b></a>
-                        <ul id="reports-dropdown" class="collapse">
-                            <li><a href="analysis-site.html">监测点分析</a></li>
-                            <li><a href="temperaturep-site.html">数据类型分析</a></li>
-                            <li><a href="time-site.html">时段分析</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
-                                            data-target="#members-dropdown" href="#"><i
-                            class="icon-group"></i> 权限管理 <b class="caret"></b></a>
-                        <ul id="members-dropdown" class="collapse">
-                            <li><a href="listing.html">创建用户</a></li>
-                            <li><a href="listing.html">访问权限</a></li>
-                            <li><a href="listing.html">管理员名单</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
-                                            data-target="#settings-dropdown" href="#"><i
-                            class="icon-cogs"></i> 系统配置 <b class="caret"></b></a>
-                        <ul id="settings-dropdown" class="collapse">
-                            <li><a href="listing.html">监测点管理</a></li>
-                            <li><a href="listing.html">区域划分</a></li>
-                            <li><a href="listing.html">操作日志</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="icon-bullhorn"></i> 通知 <span class="badge badge-warning">2</span></a></li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse" data-target="#help-dropdown"
-                                            href="#"><i
-                            class="icon-info-sign"></i> 帮助 <b class="caret"></b></a>
-                        <ul id="help-dropdown" class="collapse">
-                            <li><a href="content.html">使用手册</a></li>
-                            <li class="active"><a href="content.html">技术说明</a></li>
-                            <li><a href="content.html">支持</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- end main-left-col -->
-
-        </div>
-        <!-- 导航栏结束 -->
+        <%--导航栏--%>
+        <jsp:include page="frame-left.jsp" />
 
         <!--正文开始-->
         <div class="span10">
@@ -184,7 +123,7 @@
                     </div>
                     <div class="row">
                         <div class="span10">
-                            <div class="span4">
+                            <div class="span10">
                                 <div class="page-header">
                                     <h2><i class="icon-shopping-cart pull-right"></i>监测点状况</h2>
                                 </div>
@@ -238,7 +177,7 @@
 
                             </div>
 
-                            <div class="span5">
+                            <div class="span10">
                                 <div class="slate">
                                     <div class="page-header">
                                         <h2><i class="icon-envelope-alt pull-right"></i>状态图</h2>
@@ -320,13 +259,13 @@
         url:'<%=request.getContextPath()%>/getNews.action',
         async: false,
         dataType: 'json',
-        contentType:  "application/json;charset=utf-8",
         error: function(request)
         {
             console.log("ajax error");
         },
         success: function(data)
         {
+            newsData = data;
             var trList = $("#newsReport tbody").children("tr");
             var j = 0;
                 for(var key in data){

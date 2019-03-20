@@ -12,7 +12,8 @@
     <!-- 这个重点，标注必须加，websocket用到 -->
     <!-- <mvc:annotation-driven /> -->
     <context:component-scan base-package="com.malaganguo.athmsssm.web.push" />
+    <context:component-scan base-package="com.malaganguo.athmsssm.model" />
 
-    <bean id="newsController" class="com.malaganguo.athmsssm.web.controller.NewsController"></bean>
+    <bean id="newsController" class="com.malaganguo.athmsssm.web.controller.NewsController"/>
 
 </beans>
