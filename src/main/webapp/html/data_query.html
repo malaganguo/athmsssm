@@ -14,6 +14,7 @@
     <link href="../assets/css/font-awesome.css" rel="stylesheet">
     <link href="../assets/css/admin.css" rel="stylesheet">
 	<link href="../assets/css/aloha.css" rel="stylesheet">
+	<link href="../assets/css/datetime/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
     <!--
         <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
@@ -144,7 +145,7 @@
                     <div class="span10">
                         
                         <div class="slate">
-							<form class="form-inline">
+							<!--<form class="form-inline">
 								
 								<select class="span2  select-aloha">
 									<option value=""> - 起始日期 - </option>
@@ -163,7 +164,33 @@
 								<input type="text" class="input-medium  select-aloha" placeholder="请输入输入关键字...">
 								<button type="submit" class="btn btn-primary pull-right  select-aloha">查询数据</button>
 								
-							</form>
+							</form>-->
+							<div>
+								<div class="form-group">
+									<label for="dtp_input2" class="col-lg-2 control-label">开始时间</label>
+									<div class="input-group date form_date col-lg-3" data-date="" data-date-format="" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+										<input id="start_time" name="start_time" class="form-control" size="16" type="text" value="" readonly>
+										<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+										<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+									</div>
+
+									<label for="dtp_input1" class="col-md-2 control-label">结束时间</label>
+									<div class="input-group date form_date col-md-3" data-date="" data-date-format="" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
+										<input id="end_time" name="start_time" class="form-control" size="16" type="text" value="" readonly>
+										<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+										<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+									</div>
+									<select class="span2 select-aloha" id="sitechose">
+										<option value=""> - 监测点 - </option>
+										<option value="A">A点</option>
+										<option value="B">B点</option>
+									</select>
+									<input type="hidden" id="dtp_input2" value="" />
+									<input type="hidden" id="dtp_input1" value="" />
+
+									<button type="submit" class="btn btn-primary pull-right  select-aloha" id="queryButton">查询数据</button>
+								</div>
+							</div>
                         </div>
                   		
 				  	</div>
@@ -330,5 +357,43 @@
 <script src="../assets/js/excanvas.min.js"></script>
 <script src="../assets/js/jquery.flot.min.js"></script>
 <script src="../assets/js/jquery.flot.resize.js"></script>
+<script type="text/javascript" src="../assets/js/datetime/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../assets/js/datetime/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+</script>
+<script>
+	$("#queryButton").click(function(){
+        var starttime = $("#dtp_input2").val();
+        var endtime = $("#dtp_input1").val();
+        var site = $("#sitechose option:selected").val();
+	    var params = $.param({'site':site, 'starttime':starttime, 'endtime':endtime},true);
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url:'<%=request.getContextPath()%>/dataQuery.action',
+            async: false,
+            dataType: 'json',
+            error: function(request)
+            {
+                console.log("ajax error");
+            },
+            success: function(data)
+            {
+				console.log("dataQuery:"+data);
+            }
+        });
+
+	});
+</script>
 </body>
 </html>

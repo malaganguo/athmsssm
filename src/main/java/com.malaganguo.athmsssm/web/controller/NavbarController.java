@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class NavbarController {
     //跳转主页
     @RequestMapping("toMain.action")
-    public ModelAndView toMain(){
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("main");
-        return mav;
+    public String toMain(){
+        return "main";
     }
     //跳转数据查询
     @RequestMapping("toDataQuery.action")

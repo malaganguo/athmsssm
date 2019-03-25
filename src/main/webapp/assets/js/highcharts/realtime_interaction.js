@@ -90,7 +90,13 @@ var chart = Highcharts.chart('realtime_data', {
         }
     },
     legend: {
-        enabled: false
+        enabled: true,
+        align: 'left',
+        verticalAlign: 'top',
+        y: 20,
+        floating: true,
+        borderWidth: 0
+
     },
     series: [{
         name: '湿度数据',

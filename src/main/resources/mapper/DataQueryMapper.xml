@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.malaganguo.athmsssm.dao.IDataQueryDao">
+
+    <select id="dataQueryByTimeAndSite" parameterType="com.malaganguo.athmsssm.model.HoursDataConditionModel" resultType="com.malaganguo.athmsssm.model.HoursDataModel"  >
+        SELECT date,temperature,humidity FROM ${site} WHERE DATE BETWEEN #{starttime} AND #{endtime}
+    </select>
+
+</mapper>

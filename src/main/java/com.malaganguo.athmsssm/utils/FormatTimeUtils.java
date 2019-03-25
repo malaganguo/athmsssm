@@ -1,14 +1,15 @@
 package com.malaganguo.athmsssm.utils;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class FormatTimeUtils {
 
-    public String getFormatDate(Date date){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MM dd hh");
-        String s = sdf.format(date);
-        return s;
+    public static String getFormatStringDate(String date){
+        //2019-03-24 ->  20190324
+        StringBuffer stringBuffer = new StringBuffer();
+        String[] split = date.split("-");
+        int month = Integer.parseInt(split[1]);
+        int day = Integer.parseInt(split[2]);
+        stringBuffer.append(split[0]).append(split[1]).append(split[2]);
+        return  stringBuffer.toString();
     }
+
 }
