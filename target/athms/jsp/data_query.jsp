@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 
@@ -126,7 +127,7 @@
 								<th class="operate">操作</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="dataList">
 							<tr>
 								<td><a href="vieworder.html">2019-1-2 14:09</a></td>
 								<td><a href="#">西安邮电大学监测点</a></td>
@@ -229,12 +230,14 @@
             {
                 console.log("dataQuery:"+data);
                 dataQueryResult = data;
+                insertResultIntoTable(data);
             }
         });
-
-
-
     });
+    function insertResultIntoTable(data) {
+		var tbodylabel = $("#dataList");
+
+    }
 </script>
 </body>
 </html>

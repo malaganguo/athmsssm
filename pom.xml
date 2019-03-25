@@ -32,13 +32,17 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+    <!-- jstl -->
     <dependency>
-      <groupId>javax.servlet.jsp.jstl</groupId>
+      <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <version>1.1.2</version>
     </dependency>
-
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
 
     <!-- https://www.cnblogs.com/hackyo/p/6646051.html -->
     <!-- java ee -->
