@@ -31,6 +31,15 @@ public class NavbarController {
     public String toAnalysisDataTime(){
         return "analysis-dataTime";
     }
+
+    @RequestMapping("toAnalysisTemp.action")
+    public String toAnalysisTemp(){
+        return  "analysis-temp";
+    }
+    @RequestMapping("toAnalysisHum.action")
+    public String toAnalysisHum(){
+        return "analysis-hum";
+    }
     //跳转权限管理：创建用户、权限分配、管理员名单
     @RequestMapping("toCreateUser.action")
     public String toCreateUser(){

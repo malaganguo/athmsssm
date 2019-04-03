@@ -117,28 +117,17 @@
 								<h2>查询结果</h2>
 							</div>
 							
-                            <table class="table">
+                            <table class="table" id="dataList">
 						<thead>
 							<tr>
-								<th class="starttime">起始时间</th>
+								<th class="starttime">时间</th>
 								<th class="monitoringpoint">监测点</th>
                                 <th class="datatype">温度</th>
                                 <th class="datatype">湿度</th>
 								<th class="operate">操作</th>
 							</tr>
 						</thead>
-						<tbody id="dataList">
-							<tr>
-								<td><a href="vieworder.html">2019-1-2 14:09</a></td>
-								<td><a href="#">西安邮电大学监测点</a></td>
-								<td><a href="#">温度数据</a></td>
-                                <td><a href="#">温度数据</a></td>
-								<td>
-									<a class="btn btn-small btn-info" href="#">图表查看</a>
-									<a class="btn btn-small btn-primary" href="#">下载</a>
-									<a class="btn btn-small btn-danger" href="#">删除</a>
-								</td>
-							</tr>
+						<tbody><!--表格内容 -->
 
 						</tbody>
 						</table>
@@ -228,15 +217,27 @@
             },
             success: function(data)
             {
-                console.log("dataQuery:"+data);
                 dataQueryResult = data;
                 insertResultIntoTable(data);
             }
         });
     });
     function insertResultIntoTable(data) {
-		var tbodylabel = $("#dataList");
-
+        for(var i = 0 ; i < data.length ; i++){
+        var labelIntbody = "<tr>\n" +
+            "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].date+"</a></td>\n" +
+            "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+$("#sitechose option:selected").text()+"</a></td>\n" +
+            "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].temperature+"℃</a></td>\n" +
+            "                                <td><a href=\"#\">"+data[i].humidity+"RH</a></td>\n" +
+            "\t\t\t\t\t\t\t\t<td>\n" +
+            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
+            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-primary\" href=\"#\">下载</a>\n" +
+            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"#\">删除</a>\n" +
+            "\t\t\t\t\t\t\t\t</td>\n" +
+            "\t\t\t\t\t\t\t</tr>";
+        $("#dataList tbody").append(labelIntbody);
+        console.log(data);
+        }
     }
 </script>
 </body>

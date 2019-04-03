@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script src="https://img.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://img.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+    <script src="https://img.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    <script src="https://img.highcharts.com.cn/highcharts/themes/dark-unica.js"></script>
+</head>
+
+<body>
+<!--<div id="line_chart" style="min-width:400px;height:400px"/>-->
+<div>
+    <div id="container1" style="min-width: 600px; min-height: 400px; float:left"></div>
+    <script type="text/javascript">
+        var chart = Highcharts.chart('container1', {
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: '月平均气温'
+            },
+            subtitle: {
+                text: '数据来源: WorldClimate.com'
+            },
+            xAxis: {
+                categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+            },
+            yAxis: {
+                title: {
+                    text: '气温 (°C)'
+                }
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        // 开启数据标签
+                        enabled: true
+                    },
+                    // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                    enableMouseTracking: false
+                }
+            },
+            series: [{
+                name: '东京',
+                data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            }, {
+                name: '伦敦',
+                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            }]
+        });
+    </script>
+    <div id="container2" style="min-width: 600px; min-height: 400px; float:left"></div>
+    <script type="text/javascript">
+        // Build the chart
+        Highcharts.chart('container2', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '2018 年浏览器市场份额'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: [{
+                    name: 'Chrome',
+                    y: 61.41,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Internet Explorer',
+                    y: 11.84
+                }, {
+                    name: 'Firefox',
+                    y: 10.85
+                }, {
+                    name: 'Edge',
+                    y: 4.67
+                }, {
+                    name: 'Safari',
+                    y: 4.18
+                }, {
+                    name: 'Other',
+                    y: 7.05
+                }]
+            }]
+        });
+    </script>
+    <div id="container3" style="min-width: 600px; min-height: 400px; float:left"></div>
+    <script type="text/javascript">
+        var chart = Highcharts.chart('container3', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '全球各大城市人口排行'
+            },
+            subtitle: {
+                text: '数据截止 2017-03，来源: <a href="https://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45  // 设置轴标签旋转角度
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '人口 (百万)'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '人口总量: <b>{point.y:.1f} 百万</b>'
+            },
+            series: [{
+                name: '总人口',
+                data: [
+                    ['上海', 24.25],
+                    ['卡拉奇', 23.50],
+                    ['北京', 21.51],
+                    ['德里', 16.78],
+                    ['拉各斯', 16.06],
+                    ['天津', 15.20],
+                    ['伊斯坦布尔', 14.16],
+                    ['东京', 13.51],
+                    ['广州', 13.08],
+                    ['孟买', 12.44],
+                    ['莫斯科', 12.19],
+                    ['圣保罗', 12.03],
+                    ['深圳', 10.46],
+                    ['雅加达', 10.07],
+                    ['拉合尔', 10.05],
+                    ['首尔', 9.99],
+                    ['武汉', 9.78],
+                    ['金沙萨', 9.73],
+                    ['开罗', 9.27],
+                    ['墨西哥', 8.87]
+                ],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // :.1f 为保留 1 位小数
+                    y: 10
+                }
+            }]
+        });
+    </script>
+    <div id="container4" style="min-width: 600px; min-height: 400px; float:left"></div>
+    <script type="text/javascript">
+        var chart = Highcharts.chart('container4', {
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: '东京月平均温度和降雨量'
+            },
+            subtitle: {
+                text: '数据来源: WorldClimate.com'
+            },
+            xAxis: [{
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                crosshair: true
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    format: '{value}°C',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: '温度',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: '降雨量',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    format: '{value} mm',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                opposite: true
+            }],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 120,
+                verticalAlign: 'top',
+                y: 100,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            series: [{
+                name: '降雨量',
+                type: 'column',
+                yAxis: 1,
+                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                tooltip: {
+                    valueSuffix: ' mm'
+                }
+            }, {
+                name: '温度',
+                type: 'spline',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+                tooltip: {
+                    valueSuffix: '°C'
+                }
+            }]
+        });
+    </script>
+</div>
+<script type="text/javascript">
+    $(window).resize(function() {
+        var width_frm = $(document.body).width();
+        var height_frm = $(document.body).height();
+        var width_div = width_frm/2;
+        var height_div = height_frm/2;
+
+        $('#container1').css("height", height_div);
+        $('#container1').css("width", width_div);
+
+        $('#container2').css("height", height_div);
+        $('#container2').css("width", width_div);
+
+        $('#container3').css("height", height_div);
+        $('#container3').css("width", width_div);
+
+        $('#container4').css("height", height_div);
+        $('#container4').css("width", width_div);
+    });
+</script>
+</body>
+</html>

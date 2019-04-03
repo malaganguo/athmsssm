@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.malaganguo.athmsssm.dao.IDataAnalysisDao">
+
+    <select id="queryMaxTemperature"  resultType="int"  >
+        SELECT MAX(temperature) AS maxtemp FROM site_1_hourdata WHERE DATE BETWEEN '2019022402' AND '2019032423';
+    </select>
+
+    <select id="selectPeakTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.TempPeakModel">
+        SELECT DISTINCT MAX(CAST(temperature AS UNSIGNED INTEGER)) AS maxTemp,MIN(CAST(temperature AS UNSIGNED INTEGER)) AS minTemp,AVG(CAST(temperature AS UNSIGNED INTEGER)) AS avgTemp,((SELECT COUNT(CAST(temperature AS UNSIGNED INTEGER)) FROM site_1_hourdata WHERE CAST(temperature AS UNSIGNED INTEGER) BETWEEN 10 AND 50)/(SELECT COUNT(temperature) FROM site_1_hourdata)) AS percent FROM site_1_hourdata WHERE DATE BETWEEN '2019022402' AND '2019032423';
+    </select>
+    <!--日极值数据查询-->
+    <select id="selectDayPeakTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.TempPeakModel">
+        SELECT DISTINCT MAX(CAST(temperature AS UNSIGNED INTEGER)) AS maxTemp,MIN(CAST(temperature AS UNSIGNED INTEGER)) AS minTemp,AVG(CAST(temperature AS UNSIGNED INTEGER)) AS avgTemp,((SELECT COUNT(CAST(temperature AS UNSIGNED INTEGER)) FROM ${site} WHERE CAST(temperature AS UNSIGNED INTEGER) BETWEEN 10 AND 50)/(SELECT COUNT(temperature) FROM site_1_hourdata)) AS percent FROM ${site} WHERE DATE BETWEEN #{starttime} AND #{endtime};
+    </select>
+    <!--日时间温度数据查询-->
+    <select id="selectDayTimeAndTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.ChartModel">
+        SELECT DATE,temperature FROM site_1_hourdata WHERE DATE BETWEEN '2019021001' AND '2019041110';
+    </select>
+
+</mapper>

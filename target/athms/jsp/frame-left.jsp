@@ -14,21 +14,15 @@
             <li class="active"><a href="<%=request.getContextPath()%>/toMain.action"><i class="icon-home"></i> 首页 </a></li>
             <li><a class="dropdown-toggle" data-toggle="collapse" data-target="#website-dropdown"
                    href="<%=request.getContextPath()%>/toDataQuery.action"><em class="icon-sitemap"></em> 数据查询 </a></li>
-            <!--<li class="dropdown">
-                          <a class="dropdown-toggle" data-toggle="collapse" data-target="#store-dropdown" href="#"><i class="icon-shopping-cart"></i> 数据统计 <b class="caret"></b></a>
-                          <ul id="store-dropdown" class="collapse">
-                              <li><a href="listing.html">Catalogue</a></li>
-                              <li><a href="orders.html">Orders</a></li>
-                              <li><a href="listing.html">Enquiries</a></li>
-                          </ul>
-                      </li>-->
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
                                     data-target="#reports-dropdown" href="#"><i
                     class="icon-signal"></i> 数据分析 <b class="caret"></b></a>
                 <ul id="reports-dropdown" class="collapse">
-                    <li><a href="<%=request.getContextPath()%>/toAnalysisSite.action">监测点分析</a></li>
+                    <%--<li><a href="<%=request.getContextPath()%>/toAnalysisSite.action">监测点分析</a></li>
                     <li><a href="<%=request.getContextPath()%>/toAnalysisDataType.action">数据类型分析</a></li>
-                    <li><a href="<%=request.getContextPath()%>/toAnalysisDataTime.action">时段分析</a></li>
+                    <li><a href="<%=request.getContextPath()%>/toAnalysisDataTime.action">时段分析</a></li>--%>
+                        <li><a href="<%=request.getContextPath()%>/toAnalysisTemp.action">温度分析</a></li>
+                        <li><a href="<%=request.getContextPath()%>/toAnalysisHum.action">湿度分析</a></li>
                 </ul>
             </li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"

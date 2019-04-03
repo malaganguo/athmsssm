@@ -20,7 +20,7 @@ import java.util.Map;
 @Controller
 public class NewsController {
     private static Logger LOGGER = Logger.getLogger(NewsController.class);
-    private static Map<String,String> newsNameAndUrl;
+    private static Map<String,String> newsNameAndUrl;//值在监听器中获取
     private static Gson gson = new Gson();
 
     public Map<String, String> getNewsNameAndUrl() {

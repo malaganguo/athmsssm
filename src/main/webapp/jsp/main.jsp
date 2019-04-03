@@ -269,7 +269,7 @@
             var trList = $("#newsReport tbody").children("tr");
             var j = 0;
                 for(var key in data){
-                        console.log(key +'  '+ data[key]);
+                        // console.log(key +'  '+ data[key]);
                         var tdArr = trList.eq(j++).find("td");
                         tdArr.eq(0).find("a").html(key).attr("href",data[key]);
                         tdArr.eq(1).find("a");//  链接

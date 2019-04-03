@@ -6,6 +6,6 @@ public class NotFindNewsException extends Exception {
 
     @Override
     public String toString() {
-        return "没有爬去到中国农业网的新闻！";
+        return "没有爬取到中国农业网的新闻！";
     }
 }
