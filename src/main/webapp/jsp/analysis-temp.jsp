@@ -139,8 +139,8 @@
                                         </div>
                                     <div class="control-group span5">
                                         <!-- Search input-->
-                                        <label class="control-label">最高门限</label>
-                                        <div class="controls" id="analysis-maxthreshold">
+                                        <label class="control-label">最低门限</label>
+                                        <div class="controls" id="analysis-minthreshold">
                                             <input type="text" placeholder="请输入温度最低门限" class="input-xlarge search-query">
                                             <p class="help-block">-20℃~70℃</p>
                                         </div>
@@ -148,8 +148,8 @@
                                     </div>
                                     <div class="control-group span5">
                                         <!-- Text input-->
-                                        <label class="control-label">最低门限</label>
-                                        <div class="controls" id="analysis-minthreshold">
+                                        <label class="control-label">最高门限</label>
+                                        <div class="controls" id="analysis-maxthreshold">
                                             <input type="text" placeholder="请输入温度最高门限" class="input-xlarge">
                                             <p class="help-block">-20℃~70℃</p>
                                         </div>
@@ -205,43 +205,47 @@
                 <div class="row">
                     <div class="span12">
                         <div id="container1"  class="span2" style="min-width: 550px; min-height: 400px; float:left"></div>
-                        <script type="text/javascript">
-                            var chart = Highcharts.chart('container1', {
-                                chart: {
-                                    type: 'line'
-                                },
-                                title: {
-                                    text: '温度折线图'
-                                },
-                                subtitle: {
-                                    text: '数据来源: site'
-                                },
-                                xAxis: {
-                                    categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
-                                },
-                                yAxis: {
+                        <%--<script type="text/javascript">
+                            function fun() {
+                                var chart = Highcharts.chart('container1', {
+                                    chart: {
+                                        type: 'line'
+                                    },
                                     title: {
-                                        text: '温度(°C)'
-                                    }
-                                },
-                                plotOptions: {
-                                    line: {
-                                        dataLabels: {
-                                            // 开启数据标签
-                                            enabled: true
-                                        },
-                                        // 关闭鼠标跟踪，对应的提示框、点击事件会失效
-                                        enableMouseTracking: false
-                                    }
-                                },
-                                series: [{
-                                    name: '东京',
-                                    data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-                                }]
-                            });
-                        </script>
+                                        text: '温度折线图'
+                                    },
+                                    subtitle: {
+                                        text: '数据来源: site'
+                                    },
+                                    xAxis: {
+                                        // categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                                        categories: timeStr
+                                    },
+                                    yAxis: {
+                                        title: {
+                                            text: '温度(°C)'
+                                        }
+                                    },
+                                    plotOptions: {
+                                        line: {
+                                            dataLabels: {
+                                                // 开启数据标签
+                                                enabled: true
+                                            },
+                                            // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                                            enableMouseTracking: false
+                                        }
+                                    },
+                                    series: [{
+                                        name: $("#select-site option:selected").text(),
+                                        data: chart1Data
+                                    }]
+                                });
+                            }
+
+                        </script>--%>
                         <div id="container2" class="span2" style="min-width: 550px; min-height: 400px; float:left"></div>
-                        <script type="text/javascript">
+                        <%--<script type="text/javascript">
                             // Build the chart
                             Highcharts.chart('container2', {
                                 chart: {
@@ -283,14 +287,14 @@
                                     }]
                                 }]
                             });
-                        </script>
+                        </script>--%>
 
                     </div>
                 </div>
                 <div class="row">
                     <div class="span12">
                         <div id="container3" class="span2" style="min-width: 550px; min-height: 400px; float:left"></div>
-                        <script type="text/javascript">
+                        <%--<script type="text/javascript">
                             var chart = Highcharts.chart('container3', {
                                 chart: {
                                     type: 'column'
@@ -353,9 +357,9 @@
                                     }
                                 }]
                             });
-                        </script>
+                        </script>--%>
                         <div id="container4" class="span2" style="min-width: 550px; min-height: 400px; float:left"></div>
-                        <script type="text/javascript">
+                        <%--<script type="text/javascript">
                             var chart = Highcharts.chart('container4', {
                                 chart: {
                                     zoomType: 'xy'
@@ -428,7 +432,7 @@
                                     }
                                 }]
                             });
-                        </script>
+                        </script>--%>
                     </div>
 
                 </div>
@@ -452,11 +456,14 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/datetime/bootstrap.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/datetime/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/datetime/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="<%=request.getContextPath()%>/assets/js/highcharts/highcharts.js"></script>
 
 <!--highcharts的图标引入-->
 
 <script type="text/javascript">
-
+    var analysisdata = null;
+    var timeStr = new Array();
+    var chart1Data = new Array();
 
     $('.form_datetime').datetimepicker({
         language:  'zh-CN',
@@ -478,7 +485,6 @@
             'maxthreshold':$("#analysis-maxthreshold input").val(),
             'minthreshold':$("#analysis-minthreshold input").val()
         });
-        var dataAnalysisResult;
         $.ajax({
             cache: false,
             type: "GET",
@@ -492,20 +498,57 @@
             },
             success: function(data)
             {
+
                 console.log(data);
-                dataAnalysisResult = data;
+                analysisdata = data;
                 insertAnalysisResultIntoHtml(data);
+
             }
         });
     }
 
 
     function insertAnalysisResultIntoHtml(data){
-        alert(data.maxTemp);
-        $("#displayPeak tbody tr td").eq(0).text(data.maxTemp+"℃");
-        $("#displayPeak tbody tr td").eq(1).text(data.minTemp+"℃");
-        $("#displayPeak tbody tr td").eq(2).text(data.avgTemp+"℃");
-        $("#displayPeak tbody tr td").eq(3).text(data.percent);
+
+        //表单数据
+        $("#displayPeak tbody tr td").eq(0).text(data[0].maxTemp+"℃");
+        $("#displayPeak tbody tr td").eq(1).text(data[0].minTemp+"℃");
+        $("#displayPeak tbody tr td").eq(2).text(data[0].avgTemp+"℃");
+        $("#displayPeak tbody tr td").eq(3).text(data[0].percent);
+        //折线图数据
+        var arr = data[1];
+
+        for(var i=0;i<analysisdata[1].length;i++){
+            timeStr[i] = arr[i].date;
+            chart1Data[i] = parseInt(arr[i].temperature);
+        }
+        chart1();
+
+
+        var percentt = new Array();
+        percentt[0] = data[2].lowScopeTemp;
+        percentt[1] = data[2].highScopeTemp;
+        percentt[2] = data[2].betweenScopeTemp;
+        chart2(percentt);
+
+
+        var chart3Data = new Array();
+        for(var i=0;i<data[3].length;i++){
+            chart3Data[i] = new Array();
+            chart3Data[i][0] = data[3][i].temperature;
+            chart3Data[i][1] = data[3][i].countTemp;
+        }
+        chart3(chart3Data);
+
+        var chart4date = new Array();
+        var chart4temperature = new Array();
+        var chart4humidity = new Array();
+        for(var i=0;i<data[4].length;i++){
+            chart4date[i] = parseInt(data[4][i].date);
+            chart4temperature[i] = parseInt(data[4][i].temperature);
+            chart4humidity[i] = parseInt(data[4][i].humidity);
+        }
+        chart4(chart4date,chart4temperature,chart4humidity);
     }
 </script>
 </body>

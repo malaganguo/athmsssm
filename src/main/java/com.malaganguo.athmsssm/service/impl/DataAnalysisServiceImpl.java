@@ -3,13 +3,18 @@ package com.malaganguo.athmsssm.service.impl;
 import com.google.gson.Gson;
 import com.malaganguo.athmsssm.dao.IDataAnalysisDao;
 import com.malaganguo.athmsssm.model.AnalysisConditionModel;
+import com.malaganguo.athmsssm.model.BarChartModel;
 import com.malaganguo.athmsssm.model.ChartModel;
+import com.malaganguo.athmsssm.model.PieChartModel;
+import com.malaganguo.athmsssm.model.TempAndHumModel;
 import com.malaganguo.athmsssm.model.TempPeakModel;
 import com.malaganguo.athmsssm.service.IDataAnalysisService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,16 +31,37 @@ public class DataAnalysisServiceImpl implements IDataAnalysisService {
     }
 
     @Override
-    public String selectAllAboutTemperatureResult(AnalysisConditionModel conditionModel) {
+    public List<Object> selectAllAboutTemperatureResult(AnalysisConditionModel conditionModel) {
         String analysisScope = conditionModel.getAnalysisScope();
+        List<Object> list = new ArrayList<>();
         if("day".equals(analysisScope)){
-            TempPeakModel tempPeakModel = dataAnalysisDao.selectDayPeakTemperature(conditionModel);
-            List<ChartModel> chartModels = dataAnalysisDao.selectDayTimeAndTemperature(conditionModel);
-            StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("{\"data\":[");
-            stringBuffer.append(GSON.toJson(tempPeakModel)).append(GSON.toJson(chartModels));
-            LOGGER.debug("##analysis result json:{}"+stringBuffer.toString());
-            return stringBuffer.toString();
+            //峰值查询
+            TempPeakModel tempPeakModel = dataAnalysisDao.selectDayPeakTemperature(conditionModel);//极值
+            List<ChartModel> chartModels = dataAnalysisDao.selectDayTimeAndTemperature(conditionModel);//折线图数据
+            //饼图数据填充
+            int pieChartModels1 = dataAnalysisDao.selectPieChartTemperature1(conditionModel);
+            int pieChartModels2 = dataAnalysisDao.selectPieChartTemperature2(conditionModel);
+            int pieChartModels3 = dataAnalysisDao.selectPieChartTemperature3(conditionModel);
+            int pieChartModels4 = dataAnalysisDao.selectPieChartTemperature4(conditionModel);
+            double lt = new BigDecimal(pieChartModels2 * 1.0 / pieChartModels1 *100).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+            double bt = new BigDecimal(pieChartModels3 * 1.0 / pieChartModels1*100).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+            double between = new BigDecimal(pieChartModels4 * 1.0 / pieChartModels1 * 100).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+            PieChartModel pieChartModel = new PieChartModel();
+            pieChartModel.setLowScopeTemp(lt);
+            pieChartModel.setBetweenScopeTemp(bt);
+            pieChartModel.setHighScopeTemp(between);
+            //柱状图数据填充
+            List<BarChartModel> barChartModels = dataAnalysisDao.selectBarChartTemperature(conditionModel);
+            //温湿度对比图数据填充
+            List<TempAndHumModel> tempAndHumModels = dataAnalysisDao.selectTempAndHumChart(conditionModel);
+
+            list.add(tempPeakModel);
+            list.add(chartModels);
+            list.add(pieChartModel);
+            list.add(barChartModels);
+            list.add(tempAndHumModels);
+            LOGGER.debug("##analysis result data is :{}"+list);
+            return list;
         }else if("month".equals(analysisScope)){
 
         }else if ("year".equals(analysisScope)){

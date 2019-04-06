@@ -1,11 +1,13 @@
 package com.malaganguo.athmsssm.dao;
 
+
 import com.malaganguo.athmsssm.model.AnalysisConditionModel;
+import com.malaganguo.athmsssm.model.BarChartModel;
 import com.malaganguo.athmsssm.model.ChartModel;
+import com.malaganguo.athmsssm.model.TempAndHumModel;
 import com.malaganguo.athmsssm.model.TempPeakModel;
 
 import java.util.List;
-import java.util.Map;
 
 public interface IDataAnalysisDao {
 
@@ -28,10 +30,16 @@ public interface IDataAnalysisDao {
 
     TempPeakModel selectDayPeakTemperature(AnalysisConditionModel conditionModel);
 
+    //折线图需要的数据
     List<ChartModel> selectDayTimeAndTemperature(AnalysisConditionModel conditionModel);
-
-    Map<String,String> selectPieChartTemperature(AnalysisConditionModel conditionModel);
-
-    Map<String,String> selectBarChartTemperature(AnalysisConditionModel conditionModel);
+    //饼图需要的数据:渣渣飞不要写多sql和长sql，只能这样了
+    int selectPieChartTemperature1(AnalysisConditionModel conditionModel);//总记录数
+    int selectPieChartTemperature2(AnalysisConditionModel conditionModel);//<
+    int selectPieChartTemperature3(AnalysisConditionModel conditionModel);//之间
+    int selectPieChartTemperature4(AnalysisConditionModel conditionModel);//>
+    //柱状图
+    List<BarChartModel> selectBarChartTemperature(AnalysisConditionModel conditionModel);
+    //温湿度点柱图
+    List<TempAndHumModel> selectTempAndHumChart(AnalysisConditionModel conditionModel);
 
 }

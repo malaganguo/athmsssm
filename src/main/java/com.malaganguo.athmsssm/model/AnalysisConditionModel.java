@@ -45,8 +45,8 @@ public class AnalysisConditionModel {
         return minThreshold;
     }
 
-    public void setMinThreshold(String minThreshold) {
-        this.minThreshold = minThreshold;
+    public void setMinThreshold(String minthreshold) {
+        this.minThreshold = minthreshold;
     }
 
     public String getMaxThreshold() {
@@ -55,17 +55,5 @@ public class AnalysisConditionModel {
 
     public void setMaxThreshold(String maxThreshold) {
         this.maxThreshold = maxThreshold;
-    }
-
-    @Override
-    public String toString() {
-        return "AnalysisConditionModel{" +
-                "site='" + site + '\'' +
-                ", analysisScope='" + analysisScope + '\'' +
-                ", starttime='" + starttime + '\'' +
-                ", endtime='" + endtime + '\'' +
-                ", minThreshold='" + minThreshold + '\'' +
-                ", maxThreshold='" + maxThreshold + '\'' +
-                '}';
     }
 }

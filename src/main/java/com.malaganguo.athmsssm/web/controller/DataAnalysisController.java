@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class DataAnalysisController {
@@ -21,7 +22,7 @@ public class DataAnalysisController {
 
     @RequestMapping("/getAnalysisResult.action")
     @ResponseBody
-    public String getAnalysisResult(HttpServletRequest request, AnalysisConditionModel conditionModel) {
+    public List<Object> getAnalysisResult(HttpServletRequest request, AnalysisConditionModel conditionModel) {
         //接收参数
         String site = request.getParameter("site");
         String analysisScope = request.getParameter("analysisScope");
@@ -40,7 +41,7 @@ public class DataAnalysisController {
         conditionModel.setMinThreshold(minthreshold);
         System.out.println("conditionModelController:"+conditionModel);
 
-        String result = dataAnalysisService.selectAllAboutTemperatureResult(conditionModel);
+        List<Object> result = dataAnalysisService.selectAllAboutTemperatureResult(conditionModel);
         LOGGER.debug("##Data analysis result:"+result);
         return result;
     }
