@@ -25,14 +25,14 @@
                         <li><a href="<%=request.getContextPath()%>/toAnalysisHum.action">湿度分析</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
-                                    data-target="#members-dropdown" href="#"><i
+            <li><a class="dropdown-toggle" data-toggle="collapse"
+                                    data-target="#members-dropdown" href="<%=request.getContextPath()%>/toAuthorization.action"><i
                     class="icon-group"></i> 权限管理 <b class="caret"></b></a>
-                <ul id="members-dropdown" class="collapse">
+                <%--<ul id="members-dropdown" class="collapse">
                     <li><a href="<%=request.getContextPath()%>/toCreateUser.action">创建用户</a></li>
                     <li><a href="<%=request.getContextPath()%>/toVisitAuthority.action">访问权限</a></li>
                     <li><a href="<%=request.getContextPath()%>/toAdminList.action">管理员名单</a></li>
-                </ul>
+                </ul>--%>
             </li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="collapse"
                                     data-target="#settings-dropdown" href="#"><i

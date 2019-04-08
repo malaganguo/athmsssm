@@ -128,12 +128,184 @@
             <!--主仪表盘开始-->
             <div class="main-area dashboard">
               <div class="row">
-                    <div class="slate">
-                       <form>
-                            
-                        </form>
+                  <div class="page-header">
+                      <h2>&nbsp;用户列表</h2>
+                  </div>
+                <div class="span3">
+                    <div class="control-group span12">
+                        <button class="btn btn-large" data-toggle="modal" data-target="#addUserModal">&nbsp;&nbsp;添&nbsp;加&nbsp;用&nbsp;户&nbsp;&nbsp;</button>
+
                     </div>
-                  
+                    <!--添加单用户的模态框-->
+                    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">
+                                        添加用户
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+
+
+                                            <div class="control-group">
+
+                                                <!-- Text input-->
+                                                <label class="control-label" >用户名</label>
+                                                <div class="controls">
+                                                    <input type="text" placeholder="请输入用户名" class="input-xlarge">
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+
+                                                <!-- Text input-->
+                                                <label class="control-label" >密码</label>
+                                                <div class="controls">
+                                                    <input type="text" placeholder="请输入密码" class="input-xlarge">
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+
+                                                <!-- Text input-->
+                                                <label class="control-label" >邮箱（选填）</label>
+                                                <div class="controls">
+                                                    <input type="text" placeholder="请输入邮箱" class="input-xlarge">
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="control-group">
+
+                                                <!-- Select Basic -->
+                                                <label class="control-label">请选择角色</label>
+                                                <div class="controls">
+                                                    <select class="input-xlarge">
+                                                        <option>普通用户</option>
+                                                        <option>管理员</option>
+                                                        <option></option></select>
+                                                </div>
+
+                                            </div>
+
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        注册
+                                    </button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                    </div>
+                    <div class="control-group span12">
+                        <button class="btn btn-large" data-toggle="modal" data-target="#addUsersModal">批量添加用户</button>
+                        <!--批量添加用户模态框-->
+                        <div class="modal fade" id="addUsersModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabe2">
+                                            <B>批量添加用户</B>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="control-group">
+
+                                                    <!-- Text input-->
+                                                    <label class="control-label" >创建用户数</label>
+                                                    <div class="controls">
+                                                        <input type="text" placeholder="请输入创建用户个数" class="input-xlarge">
+                                                        <p class="help-block"></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+
+                                                    <!-- Text input-->
+                                                    <label class="control-label" >用户名前缀</label>
+                                                    <div class="controls">
+                                                        <input type="text" placeholder="请输入用户名前缀" class="input-xlarge">
+                                                        <p class="help-block"></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+
+                                                    <!-- Text input-->
+                                                    <label class="control-label" >密码（统一）</label>
+                                                    <div class="controls">
+                                                        <input type="text" placeholder="请输入密码" class="input-xlarge">
+                                                        <p class="help-block"></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+
+                                                    <!-- Select Basic -->
+                                                    <label class="control-label">请选择角色</label>
+                                                    <div class="controls">
+                                                        <select class="input-xlarge">
+                                                            <option>普通用户</option>
+                                                            <option>管理员</option>
+                                                            <option></option></select>
+                                                    </div>
+
+                                                </div>
+
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                        </button>
+                                        <button type="button" class="btn btn-info">
+                                            注册
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
+                    </div>
+                    <!--批量添加用户的模态框-->
+                </div>
+                <div class="span6">
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="u100px">用户名</th>
+                            <th class="u100px">email</th>
+                            <th class="u100px">角色</th>
+                            <th class="u100px">注册时间</th>
+                            <th class="u100px">注册IP</th>
+                            <th class="u50px">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
               </div>
             </div>
         </div>

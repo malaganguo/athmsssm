@@ -156,7 +156,7 @@ function chart4(chart4date,chart4temperature,chart4humidity) {
             zoomType: 'xy'
         },
         title: {
-            text: '#{site}温度和湿度数据对比'
+            text: $("#select-site option:selected").text()+'温度和湿度数据对比'
         },
         subtitle: {
             text: '数据来源: '+$("#select-site option:selected").text()

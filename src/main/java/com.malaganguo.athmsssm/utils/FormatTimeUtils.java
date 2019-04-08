@@ -1,5 +1,7 @@
 package com.malaganguo.athmsssm.utils;
 
+import java.util.Date;
+
 public class FormatTimeUtils {
 
     public static String getFormatStringDate(String date){

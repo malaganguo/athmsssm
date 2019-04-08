@@ -61,12 +61,30 @@ public class ActiveMQCustomer {
     }
 
     public static void close(){
-        try {
-            consumer.close();
-            session.close();
-            connection.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
+            if(null != consumer){
+                try {
+                    consumer.close();
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+                consumer = null;
+            }
+            if (null != session){
+                try {
+                    session.close();
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+                session = null;
+            }
+            if(null != connection){
+                try {
+                    connection.close();
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+                connection = null;
+            }
     }
 }

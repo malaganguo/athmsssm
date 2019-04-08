@@ -351,6 +351,26 @@ h1, h2, h3, h4, h5, h6 {
 	width: 200px;
 	text-align: left;
 }
+ .table td.u100px,
+ .table th.u100px {
+	width: 100px;
+	text-align: left;
+}
+ .table td.u50px,
+ .table th.u50px {
+	width: 50px;
+	text-align: left;
+}
+.table tr.tu100px,
+.table td.tu100px {
+	width: 100px;
+	text-align: left;
+}
+.table tr.tu50px,
+.table td.tu50px {
+	width: 50px;
+	text-align: left;
+}
 
 .slate .table td.datatype,
 .slate .table th.datatype {

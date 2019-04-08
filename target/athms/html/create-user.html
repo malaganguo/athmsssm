@@ -1,0 +1,206 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>农业管理系统——数据查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/admin.css" rel="stylesheet">
+    <link href="../assets/css/aloha.css" rel="stylesheet">
+    <link href="../assets/css/datetime/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <!--正文开始-->
+        <div class="span10">
+            <!--第二报头开始-->
+            <div class="secondary-masthead">
+
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a href="http://www.xiyou.edu.cn/"><i class="icon-globe"></i>
+                            <v></v>
+                            西安邮电大学</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> 张毅飞 <b
+                                class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html">个人资料</a></li>
+                            <li><a href="form.html">用户设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">注销</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="../toMain.action">首页</a> <span class="divider">/</span>
+                    </li>
+                    <li class="active">创建用户</li>
+                </ul>
+
+            </div>
+            <!--第二报头结束-->
+
+            <!--主仪表盘开始-->
+            <div class="main-area dashboard">
+                <div class="row">
+                    <div class="span10">
+
+                        <div class="slate">
+
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <div id="legend" class="">
+                                        <legend class="">创建用户</legend>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="control-group">
+
+                                        <!-- Text input-->
+                                        <label class="control-label" for="input01">用户名</label>
+                                        <div class="controls">
+                                            <input type="text" placeholder="请输入用户名" class="input-xlarge">
+                                            <p class="help-block"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <!-- Text input-->
+                                        <label class="control-label" for="input01">密码</label>
+                                        <div class="controls">
+                                            <input type="text" placeholder="请输入密码" class="input-xlarge">
+                                            <p class="help-block"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <!-- Text input-->
+                                        <label class="control-label" for="input01">邮箱</label>
+                                        <div class="controls">
+                                            <input type="text" placeholder="请输入邮箱" class="input-xlarge">
+                                            <p class="help-block"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <!-- Select Basic -->
+                                        <label class="control-label">角色</label>
+                                        <div class="controls">
+                                            <select class="input-xlarge">
+                                                <option>普通用户</option>
+                                                <option>管理员</option>
+                                                <option></option></select>
+                                        </div>
+
+                                    </div>
+
+                                </fieldset>
+                                <!-- Button -->
+                                <div class="controls">
+                                    <button class="btn btn-inverse">提交</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.js"></script>
+<script src="../assets/js/excanvas.min.js"></script>
+<script src="../assets/js/jquery.flot.min.js"></script>
+<script src="../assets/js/jquery.flot.resize.js"></script>
+<script src="../assets/js/datetime/bootstrap-datetimepicker.js" ></script>
+<script src="../assets/js/datetime/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+</script>
+<script>
+    var dataQueryResult ;
+    $("#queryButton").click(function(){
+        var starttime = $("#dtp_input2").val();
+        var endtime = $("#dtp_input1").val();
+        var site = $("#sitechose option:selected").val();
+        var params = $.param({'site':site, 'starttime':starttime, 'endtime':endtime},true);
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url:'../dataQuery.action',
+            async: false,
+            data: params,
+            dataType: 'json',
+            error: function(request)
+            {
+                console.log("ajax error");
+            },
+            success: function(data)
+            {
+                dataQueryResult = data;
+                insertResultIntoTable(data);
+            }
+        });
+    });
+    function insertResultIntoTable(data) {
+        for(var i = 0 ; i < data.length ; i++){
+            var labelIntbody = "<tr>\n" +
+                "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].date+"</a></td>\n" +
+                "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+$("#sitechose option:selected").text()+"</a></td>\n" +
+                "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].temperature+"℃</a></td>\n" +
+                "                                <td><a href=\"#\">"+data[i].humidity+"RH</a></td>\n" +
+                "\t\t\t\t\t\t\t\t<td>\n" +
+                "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
+                "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-primary\" href=\"#\">下载</a>\n" +
+                "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"#\">删除</a>\n" +
+                "\t\t\t\t\t\t\t\t</td>\n" +
+                "\t\t\t\t\t\t\t</tr>";
+            $("#dataList tbody").append(labelIntbody);
+            console.log(data);
+        }
+    }
+</script>
+</body>
+</html>

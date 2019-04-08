@@ -4,9 +4,23 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="com.malaganguo.athmsssm.dao.IUserDao">
 
-    <select id="selectUser" resultType="User" parameterType="long">
-        SELECT * FROM user WHERE id = #{id}
+    <select id="selectUser" resultType="com.malaganguo.athmsssm.model.User">
+        SELECT * FROM user ;
     </select>
+
+    <insert id="insertAuthorUser" parameterType="com.malaganguo.athmsssm.model.User">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO user(username,password,email,role,status) VALUES( #{username} , #{password} , #{email} , #{role} , 1)
+    </insert>
+
+    <insert id="insertAuthorUsers" parameterType="com.malaganguo.athmsssm.model.User">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO user(username,password,role,status) VALUES( #{username} , #{password} , #{role} , 1)
+    </insert>
 
 </mapper>
 

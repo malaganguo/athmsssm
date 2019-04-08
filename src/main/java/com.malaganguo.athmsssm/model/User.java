@@ -10,7 +10,7 @@ public class User {
     private String username;
     private String role;
     private int status;
-    private Date regTime;
+    private String regTime;
     private String regIp;
 
     public User() {
@@ -64,11 +64,11 @@ public class User {
         this.status = status;
     }
 
-    public Date getRegTime() {
+    public String getRegTime() {
         return regTime;
     }
 
-    public void setRegTime(Date regTime) {
+    public void setRegTime(String regTime) {
         this.regTime = regTime;
     }
 
@@ -78,5 +78,19 @@ public class User {
 
     public void setRegIp(String regIp) {
         this.regIp = regIp;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                ", role='" + role + '\'' +
+                ", status=" + status +
+                ", regTime=" + regTime +
+                ", regIp='" + regIp + '\'' +
+                '}';
     }
 }

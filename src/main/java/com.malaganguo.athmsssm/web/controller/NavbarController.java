@@ -41,7 +41,11 @@ public class NavbarController {
         return "analysis-hum";
     }
     //跳转权限管理：创建用户、权限分配、管理员名单
-    @RequestMapping("toCreateUser.action")
+    @RequestMapping("toAuthorization.action")
+    public String toAuthorization(){
+        return "authorization-manage";
+    }
+    /*@RequestMapping("toCreateUser.action")
     public String toCreateUser(){
         return "create-user";
     }
@@ -52,7 +56,7 @@ public class NavbarController {
     @RequestMapping("toAdminList.action")
     public String toAdminList(){
         return "admin-list";
-    }
+    }*/
     //跳转系统配置：监测点管理、区域划分、操作日志
     @RequestMapping("toSiteManage.action")
     public String toSiteManage(){
