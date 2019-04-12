@@ -103,7 +103,7 @@ function chart3(chart3data) {
         yAxis: {
             min: 0,
             title: {
-                text: '温度（℃）'
+                text: '比重'
             }
         },
         legend: {

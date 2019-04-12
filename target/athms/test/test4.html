@@ -3,18 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="../assets/js/datetime/jquery-1.8.3.min.js" charset="UTF-8"></script>
+    <script src="../test/heidong.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=v1tyWPrOvRo2wtdo1BqLGusRouOKsH3j"></script>
 </head>
 <body>
-<a href="#" onclick="h()">aaa</a>
+<a href="jabascript:void(0)" onclick="h()">aaa</a>
+<div style="width: 500px;" id="allmap"></div>
+<div >
+<canvas id="the-canvas"></canvas>
+</div>
+
+<div></div>
 </body>
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(108.953098279,34.2777998978), 11);  // 初始化地图,设置中心点坐标和地图级别
+    //添加地图类型控件
+    map.addControl(new BMap.MapTypeControl({
+        mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));
+    map.setCurrentCity("西安");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    map.addEventListener("click",function(e){
+        alert(e.point.lng + "," + e.point.lat);
+    });
+    var point = new BMap.Point(108.953098279,34.2777998978);
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker);
+    var point1 = new BMap.Point(108.859531,33.612598);
+    var marker1 = new BMap.Marker(point1);
+    map.addOverlay(marker1);
+
+    marker.addEventListener('click', function (evt) {
+        var point = evt.target.point;
+        var info  = '点击Marker坐标: ' + point.lng.toFixed(0) + ', ' + point.lat.toFixed(0);
+        alert(info);
+    });
+</script>
 <script>
     function h() {
         var arr = new Array();
         arr[0] = "hello";
         arr[1] = "world";
         arr[2] = "!";
-            console.log("true")
+            console.log("true");
+            i = 1;
+        $(" a").attr("onclick","alterUser("+i+")");
     }
+
+
 
 </script>
 </html>

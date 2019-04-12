@@ -74,7 +74,7 @@
             <div class="main-area dashboard">
                 <div class="row">
                     <div class="page-header">
-                        <h2>&nbsp;用户列表</h2>
+                        <h2>&nbsp;权限管理</h2>
                     </div>
                     <div class="span2">
                         <div class="control-group span12">
@@ -294,17 +294,17 @@
             success: function(data)
             {
                 for(var i=0;i<data.length;i++){
-                    $("tbody").append("<tr><td>"+data[i].username+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].role+"</td>"+"<td>"+data[i].regTime+"</td>"+"<td>"+data[i].regIp+"</td>"+"<td><a class='btn btn-small btn-primary' href='#'>修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");
-                               /*.append("<td>"+data[i].email+"</td>")
-                               .append("<td>"+data[i].role+"</td>")
-                        .append("<td>"+data[i].regTime+"</td>")
-                        .append("<td>"+data[i].regIp+"</td>")
-                        .append("<td><a class='btn btn-small btn-primary' href='#'>修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");*/
+                    $("tbody").append("<tr>" +
+                        "<td>"+data[i].username+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].role+"</td>"+"<td>"+data[i].regTime+"</td>"+"<td>"+data[i].regIp+"</td>"+"<td><a class='btn btn-small btn-primary' href='#' >修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");
                 }
                 console.log(data);
             }
         });
     });
+
+    function alterUser(i) {
+        console.log("i"+i);
+    }
 </script>
 <script>
 

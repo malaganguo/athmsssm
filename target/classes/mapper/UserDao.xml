@@ -22,5 +22,8 @@
         INSERT INTO user(username,password,role,status) VALUES( #{username} , #{password} , #{role} , 1)
     </insert>
 
+    <select id="selectCountUser" resultType="int">
+        SELECT COUNT(*) FROM user;
+    </select>
 </mapper>
 

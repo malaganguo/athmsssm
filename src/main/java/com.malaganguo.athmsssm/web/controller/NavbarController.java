@@ -62,10 +62,10 @@ public class NavbarController {
     public String toSiteManage(){
         return "manage-site";
     }
-    @RequestMapping("toAreaDivide.action")
+    /*@RequestMapping("toAreaDivide.action")
     public String toAreaDivide(){
         return "area-divide";
-    }
+    }*/
     @RequestMapping("toOperateLog.action")
     public String toOperateLog(){
         return "log-operate";

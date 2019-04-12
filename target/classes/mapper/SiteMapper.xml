@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.malaganguo.athmsssm.dao.ISiteDao">
+
+    <select id="selectAllSite" resultType="com.malaganguo.athmsssm.model.SiteModel">
+        SELECT * FROM site;
+    </select>
+
+    <insert id="addSite" parameterType="com.malaganguo.athmsssm.model.SiteModel">
+        <selectKey keyProperty="siteId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO site(siteName,siteArea,addPerson,addTime) VALUES( #{siteName} , #{siteArea} , #{addPerson} , #{addTime})
+    </insert>
+
+    <select id="selectCountSite" resultType="int">
+        SELECT COUNT(*) FROM site;
+    </select>
+
+
+</mapper>
+

@@ -2,14 +2,19 @@ package com.malaganguo.athmsssm.web.controller;
 
 
 import com.malaganguo.athmsssm.model.User;
+import com.malaganguo.athmsssm.service.impl.MainPageServiceImpl;
 import com.malaganguo.athmsssm.service.impl.UserLoginServiceImpl;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -18,14 +23,22 @@ public class UserLoginController {
     @Resource
     private UserLoginServiceImpl userLoginService;
 
+    @Autowired
+    private MainPageServiceImpl mainPageService;
+
     @RequestMapping("/userLogin.action")
-    public String userLogin(@Param("username")String username, @Param("password")String password, Model model){
+    public String userLogin(HttpServletRequest request, @Param("username")String username, @Param("password")String password,Model model){
 
         User user = userLoginService.findUser(username, password);
         if(user == null || user.equals(null)){
             return "login";
         }
-        model.addAttribute("user", user);
+        ServletContext servletContext = request.getServletContext();
+        servletContext.setAttribute("user",user);
+        List<Integer> list = mainPageService.selectMainPageStatus();
+        model.addAttribute("countSite",list.get(0));
+        model.addAttribute("countUser",list.get(1));
+//        model.addAttribute("user", user);
         return "main";
 
     }
@@ -47,6 +60,13 @@ public class UserLoginController {
         }else{
             mav.setViewName("register_login");
         }
+        return mav;
+    }
+
+    @RequestMapping("/UserLogout.action")
+    public ModelAndView  UserLogout(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("login");
         return mav;
     }
 }

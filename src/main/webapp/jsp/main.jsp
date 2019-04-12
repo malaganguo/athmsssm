@@ -40,7 +40,7 @@
     <script type="text/javascript" src="http://cdn.bootcss.com/sockjs-client/1.1.1/sockjs.js"></script>
 
     <script src="<%=request.getContextPath()%>/assets/js/websocket.js"></script>
-
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=v1tyWPrOvRo2wtdo1BqLGusRouOKsH3j"></script>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -75,7 +75,7 @@
                     </li>
                 </ul>
                 <ul class="breadcrumb">
-                    <li><a href="#">首页</a> <span class="divider">/</span></li>
+                    <li><a href="<%=request.getContextPath()%>/toMain.action">首页</a> <span class="divider">/</span></li>
                     <li class="active">首页</li>
                 </ul>
             </div>
@@ -85,11 +85,11 @@
             <div class="main-area ">
                 <div class="row">
                     <div class="span10">
-                        <div class="slate clearfix"><a class="stat-column" href="#"> <span class="number">16</span>
-                            <span>采集点数</span> </a> <a class="stat-column" href="#"> <span class="number">452</span>
-                            <span>管理人员数</span> </a> <a class="stat-column" href="#"> <span class="number">1</span>
-                            <span>当前在线人数</span> </a> <a class="stat-column" href="#"> <span class="number">1</span>
-                            <span>异常点数</span> </a></div>
+                        <div class="slate clearfix">
+                            <a class="stat-column" href="#"> <span class="number">${countSite}</span><span>采集点数</span> </a>
+                            <a class="stat-column" href="#"> <span class="number">${countUser}</span><span>管理人员数</span> </a>
+                            <a class="stat-column" href="#"> <span class="number">1</span><span>当前在线人数</span> </a>
+                            <a class="stat-column" href="#"> <span class="number">1</span><span>异常点数</span> </a></div>
                     </div>
                 </div>
                 <div class="row">
@@ -98,99 +98,40 @@
                             <div class="page-header"><span style="font-size: large"><i
                                     class="icon-signal pull-right"></i>实时数据</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <span>
-                <select>
-                  <option value="">- - -请选择- - -</option>
-                  <option value=""> A点实时数据 </option>
-                  <option value=""> B点实时数据 </option>
-                </select>
-                <select>
-                  <option value="">- - -请选择- - -</option>
-                  <option value=""> 温湿度数据 </option>
-                  <option value=""> 温度数据 </option>
-                  <option value=""> 湿度数据 </option>
-                </select>
-                </span></div>
+                                    <select>
+                                      <option value="A" selected> A点实时数据 </option>
+                                      <option value="B"> B点实时数据 </option>
+                                    </select>
+                                </span>
+                            </div>
                             <div id="realtime_data" style="height: 297px;"></div>
                             <div class="message"></div>
-                            <script>
-                                //var temperature = parseInt(JSON.parse(thdata).temperature);
-                                //var humidity = parseInt(JSON.parse(thdata).humidity);
-                                //console.log("humidity:"+humidity);
-                            </script>
                             <script src="<%=request.getContextPath()%>/assets/js/highcharts/realtime_interaction.js"></script><!--websocket引入实时数据-->
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="span10">
-                            <div class="span10">
-                                <div class="page-header">
-                                    <h2><i class="icon-shopping-cart pull-right"></i>监测点状况</h2>
-                                </div>
-                                <table class="table">
-                                    <tbody>
-                                    <tr class="alert-heading">
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="">西安邮电大学监测点</a></td>
-                                        <td><a href="">检测点位置</a></td>
-                                        <td>监测点状态</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2"><a href="">View more orders</a></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-
+                </div>
+                <div class="row">
+                    <div class="span10">
+                        <div class="slate">
+                            <div class="page-header">
+                                <h2><i class="icon-shopping-cart pull-right"></i>监测点分布</h2>
                             </div>
-
-                            <div class="span10">
-                                <div class="slate">
-                                    <div class="page-header">
-                                        <h2><i class="icon-envelope-alt pull-right"></i>状态图</h2>
-                                    </div>
-
-                                    <div id="wind-chart" style="min-width:400px;height:400px"></div>
-                                    <script src="<%=request.getContextPath()%>/assets/js/highcharts/wind-chart.js"></script>
-                                </div>
-                            </div>
+                            <div style="width:950px;height:550px;" id="dituContent"></div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="span10">
+                        <div class="slate">
+                            <div class="page-header">
+                                <h2><i class="icon-envelope-alt pull-right"></i>状态图</h2>
+                            </div>
 
-
+                            <div id="wind-chart" style="min-width:400px;height:400px"></div>
+                            <script src="<%=request.getContextPath()%>/assets/js/highcharts/wind-chart.js"></script>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="span10">
@@ -251,6 +192,147 @@
 <script src="<%=request.getContextPath()%>/assets/js/excanvas.min.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/jquery.flot.min.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/jquery.flot.resize.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url:'<%=request.getContextPath()%>/pageStatus.action',
+            async: false,
+            data: {},
+            dataType: 'json',
+            error: function(request)
+            {
+                console.log("main data ajax error");
+            },
+            success: function(data)
+            {
+
+            }
+        });
+    })
+</script>
+<script>
+    //标注点数组
+    /*var markerArr = [{title:"我的标记",content:"我的备注",point:"108.896288|34.330744",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}];*/
+    var markerArr = new Array();
+    //创建和初始化地图函数：
+    function initMap(id){
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url:'<%=request.getContextPath()%>/selectAllSite.action',
+            async: false,
+            dataType: 'json',
+            error: function(request)
+            {
+                console.log("select site ajax error");
+            },
+            success: function(data)
+            {
+                for(var i=0;i<data.length;i++){
+                    var site = data[i].siteArea;//x:93.435085,y:44.261267
+
+                    markerArr[i] = {title: "站点名："+data[i].siteName ,content:"添加人："+data[i].addPerson ,point:data[i].siteArea,isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}};
+                }
+            }
+        });
+        createMap(id);//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(id){
+        var map = new BMap.Map(id);//在百度地图容器中创建一个地图
+        var point = new BMap.Point(108.953098279,34.2777998978);//定义一个中心点坐标
+        map.centerAndZoom(point,12);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map.addControl(ctrl_sca);
+    }
+
+
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split(",")[0];
+            var p1 = json.point.split(",")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"#333",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var localObj = window.location;
+        var contextPath = localObj.pathname.split("/")[1];
+        var basePath = localObj.protocol+"//"+localObj.host+"/"+contextPath;
+        var server_context=basePath;
+        var icon = new BMap.Icon(server_context+"/assets/img/timg.jpg", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+    initMap("dituContent");//创建和初始化地图
+</script>
 <script>
     var newsData ;
     $.ajax({

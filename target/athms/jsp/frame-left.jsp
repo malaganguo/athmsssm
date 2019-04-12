@@ -25,8 +25,7 @@
                         <li><a href="<%=request.getContextPath()%>/toAnalysisHum.action">湿度分析</a></li>
                 </ul>
             </li>
-            <li><a class="dropdown-toggle" data-toggle="collapse"
-                                    data-target="#members-dropdown" href="<%=request.getContextPath()%>/toAuthorization.action"><i
+            <li><a href="<%=request.getContextPath()%>/toAuthorization.action"><i
                     class="icon-group"></i> 权限管理 <b class="caret"></b></a>
                 <%--<ul id="members-dropdown" class="collapse">
                     <li><a href="<%=request.getContextPath()%>/toCreateUser.action">创建用户</a></li>
@@ -39,7 +38,7 @@
                     class="icon-cogs"></i> 系统配置 <b class="caret"></b></a>
                 <ul id="settings-dropdown" class="collapse">
                     <li><a href="<%=request.getContextPath()%>/toSiteManage.action">监测点管理</a></li>
-                    <li><a href="<%=request.getContextPath()%>/toAreaDivide.action">区域划分</a></li>
+                    <%--<li><a href="<%=request.getContextPath()%>/toAreaDivide.action">区域划分</a></li>--%>
                     <li><a href="<%=request.getContextPath()%>/toOperateLog.action">操作日志</a></li>
                 </ul>
             </li>

@@ -12,4 +12,7 @@ public interface IUserDao {
 
     void insertAuthorUsers(User user);
 
+    //总用户数
+    int selectCountUser();
+
 }

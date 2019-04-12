@@ -295,17 +295,16 @@
             {
                 for(var i=0;i<data.length;i++){
                     $("tbody").append("<tr>" +
-                        "<td>"+data[i].username+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].role+"</td>"+"<td>"+data[i].regTime+"</td>"+"<td>"+data[i].regIp+"</td>"+"<td><a class='btn btn-small btn-primary' href='#'>修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");
-                               /*.append("<td>"+data[i].email+"</td>")
-                               .append("<td>"+data[i].role+"</td>")
-                        .append("<td>"+data[i].regTime+"</td>")
-                        .append("<td>"+data[i].regIp+"</td>")
-                        .append("<td><a class='btn btn-small btn-primary' href='#'>修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");*/
+                        "<td>"+data[i].username+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].role+"</td>"+"<td>"+data[i].regTime+"</td>"+"<td>"+data[i].regIp+"</td>"+"<td><a class='btn btn-small btn-primary' href='#' >修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");
                 }
                 console.log(data);
             }
         });
     });
+
+    function alterUser(i) {
+        console.log("i"+i);
+    }
 </script>
 <script>
 

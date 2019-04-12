@@ -105,16 +105,15 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="control-group">
+                                    <div class="control-group span12">
                                         <label class="control-label">分析范围</label>
-                                        <div class="controls">
                                             <div class="controls">
                                                 <select class="input-xlarge" id="analysis-scope">
                                                     <option value="day">日</option>
                                                     <option value="month">月</option>
                                                     <option value="year">年</option></select>
                                             </div>
-                                        </div>
+                                    </div>
                                         <div class="control-group span12">
                                             <label class="control-label">开始时间</label>
                                             <div class="controls input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-MM-dd HH:ii p" data-link-field="dtp_input1">
@@ -161,7 +160,6 @@
                                             <button class="btn btn-inverse" id="startAnalysisButton">开始分析</button>
                                         </div>
                                     </div>
-                                    </div>
                                 </fieldset>
                             </form>
 
@@ -191,10 +189,10 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>100℃</td>
-                                <td>100℃ </td>
-                                <td>100℃</td>
-                                <td>100℃</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                             </tbody>
                         </table>

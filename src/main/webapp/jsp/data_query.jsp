@@ -41,7 +41,7 @@
                             西安邮电大学</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> 张毅飞 <b
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> ${user.username} <b
                                 class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
