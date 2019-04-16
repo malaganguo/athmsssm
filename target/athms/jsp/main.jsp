@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -121,18 +122,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="span10">
-                        <div class="slate">
-                            <div class="page-header">
-                                <h2><i class="icon-envelope-alt pull-right"></i>状态图</h2>
-                            </div>
+                <%--<div class="row">--%>
+                    <%--<div class="span10">--%>
+                        <%--<div class="slate">--%>
+                            <%--<div class="page-header">--%>
+                                <%--<h2><i class="icon-envelope-alt pull-right"></i>状态图</h2>--%>
+                            <%--</div>--%>
 
-                            <div id="wind-chart" style="min-width:400px;height:400px"></div>
-                            <script src="<%=request.getContextPath()%>/assets/js/highcharts/wind-chart.js"></script>
-                        </div>
-                    </div>
-                </div>
+                            <%--<div id="wind-chart" style="min-width:400px;height:400px"></div>--%>
+                            <%--<script src="<%=request.getContextPath()%>/assets/js/highcharts/wind-chart.js"></script>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
                 <div class="row">
                     <div class="span10">
                         <div class="slate">

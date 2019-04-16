@@ -1,5 +1,7 @@
 package com.malaganguo.athmsssm.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class FormatTimeUtils {
@@ -56,8 +58,23 @@ public class FormatTimeUtils {
         return ss[0]+ss[1]+ss[2]+s[1];
     }
 
+    public static String formatDayTime(String date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String[] split = date.split("/");
+        if(split[2].length()!=4){
+            split[2] = "20"+ split[2];
+        }
+        int year = Integer.parseInt(split[2])-1900;
+        int month = Integer.parseInt(split[0])-1;
+        int day = Integer.parseInt(split[1]);
+        Date date1 = new Date(year,month,day);
+        String format1 = format.format(date1);
+        return format1;
+    }
     public static void main(String[] args) {
-        String s = formatTimepicker("2019-四月-13 02:25 上午");
+//        String s = formatTimepicker("2019-四月-13 02:25 上午");
+//        System.out.println(s);
+        String s = formatDayTime("1/13/19");
         System.out.println(s);
     }
 }

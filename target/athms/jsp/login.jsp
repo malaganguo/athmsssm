@@ -51,25 +51,4 @@
 <script src="<%=request.getContextPath()%>/assets/js/bootstrap.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
 
-<%--<script type="text/javascript">
-    alert("aaa");
-    function login(){
-        alert("hello");
-        $.ajax({
-            type:"POST",
-            url:"<%=request.getContextPath()%>/doLogin",
-            data:{},
-            async:true,
-            error:function(){
-                alert('index.jsp的ajax提交出错');
-            },
-            success:function(){
-              &lt;%&ndash;location.href = "<%=request.getContextPath()%>/login/login.action";&ndash;%&gt;
-                alert('dddd');
-              location.href = "<%=request.getContextPath()%>/jsp/helloworld.jsp";
-            }
-        });
-        return false;
-    }
-</script>--%>
 </html>

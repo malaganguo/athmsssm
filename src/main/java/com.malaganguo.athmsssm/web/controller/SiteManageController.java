@@ -3,15 +3,16 @@ package com.malaganguo.athmsssm.web.controller;
 import com.google.gson.Gson;
 import com.malaganguo.athmsssm.model.SiteModel;
 import com.malaganguo.athmsssm.service.impl.SiteServiceImpl;
+import com.malaganguo.athmsssm.utils.FormatTimeUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class SiteManageController {
@@ -38,5 +39,16 @@ public class SiteManageController {
     @ResponseBody
     public List<SiteModel> selectAllSite(){
         return siteService.selectAllSite();
+    }
+
+    @RequestMapping("/importSite.action")
+    @ResponseBody
+    public String importSite(@RequestBody List<SiteModel> list){
+        for (SiteModel sm: list
+             ) {
+            sm.setAddTime(FormatTimeUtils.formatDayTime(sm.getAddTime()));
+            siteService.addSite(sm);
+        }
+        return "success";
     }
 }

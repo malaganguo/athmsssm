@@ -1,6 +1,9 @@
 package com.malaganguo.athmsssm.web.controller;
 
+import com.malaganguo.athmsssm.service.impl.MainPageServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -8,9 +11,15 @@ import java.util.List;
 
 @Controller
 public class NavbarController {
+
+    @Autowired
+    private MainPageServiceImpl mainPageService;
     //跳转主页
     @RequestMapping("toMain.action")
-    public String toMain(){
+    public String toMain(Model model){
+        List<Integer> list = mainPageService.selectMainPageStatus();
+        model.addAttribute("countSite",list.get(0));
+        model.addAttribute("countUser",list.get(1));
         return "main";
     }
     //跳转数据查询

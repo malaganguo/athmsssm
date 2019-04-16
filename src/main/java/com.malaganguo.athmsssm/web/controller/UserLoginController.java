@@ -38,7 +38,6 @@ public class UserLoginController {
         List<Integer> list = mainPageService.selectMainPageStatus();
         model.addAttribute("countSite",list.get(0));
         model.addAttribute("countUser",list.get(1));
-//        model.addAttribute("user", user);
         return "main";
 
     }

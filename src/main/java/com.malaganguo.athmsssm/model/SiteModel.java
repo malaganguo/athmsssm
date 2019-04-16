@@ -55,6 +55,7 @@ public class SiteModel {
                 ", siteName='" + siteName + '\'' +
                 ", siteArea='" + siteArea + '\'' +
                 ", addPerson='" + addPerson + '\'' +
+                ", addTime='" + addTime + '\'' +
                 '}';
     }
 }
