@@ -69,7 +69,7 @@
                                 <li><a href="profile.html">个人资料</a></li>
                                 <li><a href="form.html">用户设置</a></li>
                                 <li class="divider"></li>
-                                <li><a href="">注销</a></li>
+                                <li><a href="<%=request.getContextPath()%>/UserLogout.action">注销</a></li>
                             </ul>
                         </li>
                     </ul>

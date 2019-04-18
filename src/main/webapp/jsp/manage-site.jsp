@@ -56,7 +56,7 @@
                             <li><a href="profile.html">个人资料</a></li>
                             <li><a href="form.html">用户设置</a></li>
                             <li class="divider"></li>
-                            <li><a href="<%=request.getContextPath()%>/UserLogout.action">注销</a></li>
+                            <li><a href="<%=request.getContextPath()%>/userLogout.action">注销</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -85,7 +85,7 @@
                         <div class="control-group span12">
                             <span class="fileinput-button">
                                 <span>导入站点</span></br>
-                            <input type="file"/>
+                            <input type="file" onchange="importf(this)"/>
                             </span>
                         </div>
                         <div class="control-group span12">
@@ -158,7 +158,7 @@
 
 
                     </div>
-                    <div class="span7">
+                    <div class="span10">
 
                         <table class="table">
                             <thead>
@@ -323,7 +323,8 @@
 </script>
 <script>
     window.site = null;
-    $(document).ready(function(){
+    function selectAllSite(){
+        $("#siteTable").html("");
         $.ajax({
             cache: false,
             type: "GET",
@@ -340,18 +341,42 @@
                 window.site = data;
                 for(var i=0;i<data.length;i++){
                     $("#siteTable").append("<tr>" +
-                        "<td>"+data[i].siteId+"</td>"+"<td>"+data[i].siteName+"</td>"+"<td>"+data[i].siteArea+"</td>"+"<td>"+data[i].addPerson+"</td>"+"<td>"+data[i].addTime+"</td>"+"<td><a class='btn btn-small btn-primary' href='#' >修改</a><a class='btn btn-small btn-warning'>删除</a></tr>");
+                        "<td>"+data[i].siteId+"</td>"+"<td>"+data[i].siteName+"</td>"+"<td>"+data[i].siteArea+"</td>"+"<td>"+data[i].addPerson+"</td>"+"<td>"+data[i].addTime+"</td>"+"<td><a class='btn btn-small btn-primary' href='#' >修改</a><a class='btn btn-small btn-warning' onclick='deleteSite("+data[i].siteId+")'>删除</a></tr>");
                 }
                 console.log(data);
             }
         });
-    });
+    }
+    $(document).ready(selectAllSite());
 
     function alterUser(i) {
         console.log("i"+i);
     }
 </script>
 <script>
+    function deleteSite(siteId){
+        var flag = confirm("确定删除站点吗？");
+        if(flag == true){
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url:'<%=request.getContextPath()%>/deleteSite.action',
+                async: false,
+                data: {"siteId":siteId},
+                error: function(request)
+                {
+                    console.log(" deleteSite ajax error");
+                },
+                success: function(data)
+                {
+                    selectAllSite();
+                    console.log("data"+data);
+
+                }
+            });
+        }
+
+    }
 
     $("#createSite").click(function () {
         var siteName = $("#fieldset3 div:first input").val();
@@ -379,6 +404,7 @@
             },
             success: function(data)
             {
+                selectAllSite();
                 console.log("data"+data)
                 if(null != data){
                     $("#addSiteModal").modal('hide');
@@ -431,6 +457,7 @@
                 },
                 success: function(data)
                 {
+                    selectAllSite();
                     alert("导入成功！");
                 }
             });

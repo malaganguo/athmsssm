@@ -23,4 +23,11 @@ public class SiteServiceImpl implements ISiteService {
     public List<SiteModel> selectAllSite() {
         return siteDao.selectAllSite();
     }
+
+    @Override
+    public void deleteSiteBySiteId(int siteId) {
+        siteDao.deleteSiteBySiteId(siteId);
+    }
+
+
 }

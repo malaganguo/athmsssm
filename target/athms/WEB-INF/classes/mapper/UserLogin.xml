@@ -10,6 +10,6 @@
         <selectKey keyProperty="id" resultType="int" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        INSERT INTO user(username,password,email,role,status,regTime,regIp) VALUES( #{username} , #{password} , #{email} , "part" , 0 , "2017-03-28 09:40:31" , "127.0.0.1")
+        INSERT INTO user(username,password,email,role,status,regIp) VALUES( #{username} , #{password} , #{email} , "part" , 0  , #{regIp})
     </insert>
 </mapper>

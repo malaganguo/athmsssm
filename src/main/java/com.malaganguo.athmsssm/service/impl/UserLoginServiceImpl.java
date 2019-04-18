@@ -33,10 +33,10 @@ public class UserLoginServiceImpl implements IUserLoginService {
     }
 
     @Override
-    public int registerUser(String username, String password, String email) {
+    public int registerUser(String username, String password, String email,String regIp) {
         int temp = 0;
         try{
-            temp = userLoginDao.userRegister(username, password, email);
+            temp = userLoginDao.userRegister(username,password,email,regIp);
         }catch(Exception e){
             System.out.println("##register fail,caused by:"+e.getMessage());
             e.printStackTrace();

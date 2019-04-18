@@ -50,10 +50,10 @@ public class UserLoginController {
     }
 
     @RequestMapping("/userRegister.action")
-    public ModelAndView userRegister(String username, String password, String email){
+    public ModelAndView userRegister(String username, String password, String email,String regIp){
         ModelAndView mav = new ModelAndView();
         int temp = 0 ;
-        temp = userLoginService.registerUser(username,password,email);
+        temp = userLoginService.registerUser(username,password,email,regIp);
         if(temp>0){
             mav.setViewName("login");
         }else{

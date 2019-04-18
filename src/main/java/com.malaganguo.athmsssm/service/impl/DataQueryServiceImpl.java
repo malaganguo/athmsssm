@@ -20,4 +20,11 @@ public class DataQueryServiceImpl implements IDataQueryService {
         List<HoursDataModel> hoursDataModels = DataQueryDao.dataQueryByTimeAndSite(conditionModel);
         return hoursDataModels;
     }
+
+    @Override
+    public void dataDeleteBySiteAndDate(String site, String date) {
+        DataQueryDao.dataDeleteBySiteAndData(site,date);
+    }
+
+
 }

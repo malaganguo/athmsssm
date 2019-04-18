@@ -6,5 +6,5 @@ public interface IUserLoginService {
 
     User findUser(String username,String password);
 
-    int registerUser(String username, String password, String email);
+    int registerUser(String username, String password, String email,String regIp);
 }

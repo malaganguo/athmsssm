@@ -22,11 +22,7 @@ public class Test {
         String xmlPath = "D:\\athmsssm\\src\\main\\resources\\spring-mybatis.xml";
         ApplicationContext ac = new FileSystemXmlApplicationContext(xmlPath);
     }
-    @org.junit.Test
-    public void Test2(){
-        int i = userLoginService.registerUser("压缩", "qwer", "2323@23.com");
-        System.out.println(i);
-    }
+
 
     @org.junit.Test
     public void Test() throws Exception {

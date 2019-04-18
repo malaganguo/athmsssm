@@ -51,4 +51,16 @@ public class SiteManageController {
         }
         return "success";
     }
+
+    @RequestMapping("/deleteSite.action")
+    @ResponseBody
+    public String deleteSite(int siteId) {
+        try {
+            siteService.deleteSiteBySiteId(siteId);
+        } catch (Exception e) {
+            LOGGER.debug("删除站点失败："+e.getMessage());
+            return "fail";
+        }
+        return "success";
+    }
 }

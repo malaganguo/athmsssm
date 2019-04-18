@@ -4,10 +4,8 @@ import com.malaganguo.athmsssm.utils.NewsSpiderUtils;
 import com.malaganguo.athmsssm.web.controller.NewsController;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class TimerTest {
     public static Map<String, String> newsNameAndUrl;
@@ -50,5 +48,14 @@ public class TimerTest {
              ) {
             System.out.println(entry.getKey() +":"+entry.getValue());
         }
+    }
+
+    @Test
+    public void time(){
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+        String format = sdf.format(date);
+        System.out.println(date);
+        System.out.println(format);
     }
 }

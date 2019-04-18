@@ -8,5 +8,5 @@ public interface IUserLoginDao {
     User userLoginCheck(@Param("username") String username, @Param("password") String password);
 
     //注册接口
-    int userRegister(@Param("username") String username,@Param("password") String password,@Param("email") String email);
+    int userRegister(@Param("username") String username,@Param("password") String password,@Param("email") String email,@Param("regIp") String regIp);
 }

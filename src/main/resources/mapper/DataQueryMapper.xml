@@ -4,7 +4,22 @@
 <mapper namespace="com.malaganguo.athmsssm.dao.IDataQueryDao">
 
     <select id="dataQueryByTimeAndSite" parameterType="com.malaganguo.athmsssm.model.HoursDataConditionModel" resultType="com.malaganguo.athmsssm.model.HoursDataModel"  >
-        SELECT date,temperature,humidity FROM ${site} WHERE DATE BETWEEN #{starttime} AND #{endtime}
+        SELECT date,temperature,humidity FROM ${site}
+        <where>
+            <if test="starttime != null and starttime !=''">
+                DATE &gt; #{starttime}
+            </if>
+            <if test="endtime != null and endtime !=''">
+                DATE &lt; #{endtime}
+            </if>
+            <if test="starttime != null and starttime !='' and endtime !=null and endtime != ''">
+                DATE BETWEEN #{starttime} AND #{endtime}
+            </if>
+        </where>
     </select>
+
+    <delete id="dataDeleteBySiteAndData" parameterType="String">
+        DELETE FROM ${site} WHERE DATE = #{date}
+    </delete>
 
 </mapper>

@@ -11,4 +11,7 @@ public interface ISiteService {
 
     //查询所有站点
     List<SiteModel> selectAllSite();
+
+    //删除站点
+    void deleteSiteBySiteId(int siteId);
 }

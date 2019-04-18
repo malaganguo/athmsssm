@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>ATHMS</title>
@@ -30,6 +32,7 @@
             <input type="password" name="password" placeholder="请输入密码">
             <input type="password" name="rePassword" placeholder="请再次输入密码">
             <input type="email" name="email" placeholder="请输入邮箱">
+            <input type="hidden" name="regIp">
             <input type="submit" class="register" value="注册">
         </form>
     </div>
@@ -42,4 +45,9 @@
 <script src="<%=request.getContextPath()%>/assets/js/jquery.min.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/bootstrap.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
+<!--搜狐接口获取客户端的ip和城市-->
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script>
+    $("input[name='regIp']").val(returnCitySN["cip"]+','+returnCitySN["cname"]);
+</script>
 </html>

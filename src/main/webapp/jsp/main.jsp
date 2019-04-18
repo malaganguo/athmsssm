@@ -71,7 +71,7 @@
                             <li><a href="profile.html">个人资料</a></li>
                             <li><a href="form.html">用户设置</a></li>
                             <li class="divider"></li>
-                            <li><a href="">注销</a></li>
+                            <li><a href="<%=request.getContextPath()%>/UserLogout.action">注销</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -99,7 +99,7 @@
                             <div class="page-header"><span style="font-size: large"><i
                                     class="icon-signal pull-right"></i>实时数据</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <span>
-                                    <select>
+                                    <select id="realTimeDataSelect">
                                       <option value="A" selected> A点实时数据 </option>
                                       <option value="B"> B点实时数据 </option>
                                     </select>
@@ -122,18 +122,6 @@
                         </div>
                     </div>
                 </div>
-                <%--<div class="row">--%>
-                    <%--<div class="span10">--%>
-                        <%--<div class="slate">--%>
-                            <%--<div class="page-header">--%>
-                                <%--<h2><i class="icon-envelope-alt pull-right"></i>状态图</h2>--%>
-                            <%--</div>--%>
-
-                            <%--<div id="wind-chart" style="min-width:400px;height:400px"></div>--%>
-                            <%--<script src="<%=request.getContextPath()%>/assets/js/highcharts/wind-chart.js"></script>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
                 <div class="row">
                     <div class="span10">
                         <div class="slate">
@@ -367,7 +355,31 @@
         }
     });
 </script>
+<%--<script>
+    $(document).ready(function () {
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url:'<%=request.getContextPath()%>/selectAllSite.action',
+            async: false,
+            dataType: 'json',
+            error: function(request)
+            {
+                console.log("select site ajax error");
+            },
+            success: function(data)
+            {
+                $("#realTimeDataSelect"),append("<option value=\"A\" selected> "+data[i].siteName+"点实时数据 </option>");
+                for(var i=0;i<data.length;i++){
 
+                    var site = data[i].siteArea;//x:93.435085,y:44.261267
+
+                    markerArr[i] = {title: "站点名："+data[i].siteName ,content:"添加人："+data[i].addPerson ,point:data[i].siteArea,isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}};
+                }
+            }
+        });
+    });
+</script>--%>
 
 
 </body>

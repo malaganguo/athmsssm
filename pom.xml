@@ -95,6 +95,14 @@
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+    <dependency>
+    <groupId>com.github.pagehelper</groupId>
+    <artifactId>pagehelper</artifactId>
+    <version>4.0.0</version>
+    </dependency>
+
+
 
     <!-- mybatis/spring整合包 -->
     <dependency>
@@ -243,6 +251,7 @@
           </configuration>
         </plugin>
       </plugins>
+
     </pluginManagement>
   </build>
 </project>

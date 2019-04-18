@@ -29,9 +29,15 @@ public class DataQueryController {
 
             Map<String, String[]> parameterMap = request.getParameterMap();
             String site = (parameterMap.get("site"))[0];
-            String starttime = FormatTimeUtils.getFormatStringDate(parameterMap.get("starttime")[0])+" 0";//格式化日期 2019-3-24 -> 2019 3 24
-            String endtime = FormatTimeUtils.getFormatStringDate((parameterMap.get("endtime"))[0])+" 23";
-            LOGGER.info("##request params:{site"+site+",starttime:"+starttime+"endtime:"+endtime+"}");
+            String starttime = parameterMap.get("starttime")[0];
+            String endtime = parameterMap.get("endtime")[0];
+            if("" !=starttime){
+                starttime = FormatTimeUtils.getFormatStringDate(parameterMap.get("starttime")[0])+" 0";//格式化日期 2019-3-24 -> 2019 3 24
+            }
+            if("" !=endtime){
+                endtime = FormatTimeUtils.getFormatStringDate((parameterMap.get("endtime"))[0])+" 23";
+            }
+            LOGGER.info("##request params:{site"+site+",starttime:"+starttime+",endtime:"+endtime+"}");
             HoursDataConditionModel conditionModel = new HoursDataConditionModel();
             conditionModel.setSite(site);
             conditionModel.setStarttime(starttime);
@@ -42,5 +48,19 @@ public class DataQueryController {
                 LOGGER.debug("hoursDataQuery result is null , value is :"+hoursDataModels);
             }
         return hoursDataModels;
+    }
+
+    @RequestMapping("/dataDelete.action")
+    @ResponseBody
+    public String dataDelete(HttpServletRequest request){
+        try {
+            String site = request.getParameter("site");
+            String date = request.getParameter("date");
+            dataQueryService.dataDeleteBySiteAndDate(site,date);
+        } catch (Exception e) {
+            LOGGER.debug("删除数据失败,原因："+e.getMessage());
+            return "fail";
+        }
+        return "success";
     }
 }

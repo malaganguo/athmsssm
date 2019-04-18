@@ -48,14 +48,14 @@
                             <li><a href="profile.html">个人资料</a></li>
                             <li><a href="form.html">用户设置</a></li>
                             <li class="divider"></li>
-                            <li><a href="">注销</a></li>
+                            <li><a href="<%=request.getContextPath()%>/UserLogout.action">注销</a></li>
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="breadcrumb">
                     <li>
-                        <a href="index.html">首页</a> <span class="divider">/</span>
+                        <a href="<%=request.getContextPath()%>/toMain.action">首页</a> <span class="divider">/</span>
                     </li>
                     <li class="active">数据查询</li>
                 </ul>
@@ -85,8 +85,7 @@
 											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 										<select class="span2 select-aloha" id="sitechose">
-											<option value=""> - 监测点 - </option>
-											<option value="site_1_hourdata">A点</option><!--value等于表名-->
+											<option value="site_1_hourdata" selected>A点</option><!--value等于表名-->
 											<option value="site_2_hourdata">B点</option>
 										</select>
 										<input type="hidden" id="dtp_input2" value="" />
@@ -134,7 +133,7 @@
 							
 							<div class="span10 ">
 				
-					<div class="pagination pull-center">
+					<%--<div class="pagination pull-center">
 						<ul>
 							<li><a href="#">首页</a></li>
 							<li class="active">
@@ -163,9 +162,9 @@
 							<li><a href="#">...</a></li>
 							<li><a href="#">尾页</a></li>
 						</ul>
-					</div>
-				
-				</div>
+					</div>--%>
+
+                            </div>
 						</div>
 				  	</div>
 				</div>
@@ -217,12 +216,17 @@
             },
             success: function(data)
             {
+                if(null == data || "" == data){
+                    alsert("查无结果！");
+                    return ;
+				}
                 dataQueryResult = data;
                 insertResultIntoTable(data);
             }
         });
     });
     function insertResultIntoTable(data) {
+        $("#dataList tbody").html("");
         for(var i = 0 ; i < data.length ; i++){
         var labelIntbody = "<tr>\n" +
             "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].date+"</a></td>\n" +
@@ -231,14 +235,42 @@
             "                                <td><a href=\"#\">"+data[i].humidity+"RH</a></td>\n" +
             "\t\t\t\t\t\t\t\t<td>\n" +
             "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
-            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-primary\" href=\"#\">下载</a>\n" +
-            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"#\">删除</a>\n" +
+            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"javascript:void(0);\" onclick='deleteData("+data[i].date+")'>删除</a>\n" +
             "\t\t\t\t\t\t\t\t</td>\n" +
             "\t\t\t\t\t\t\t</tr>";
         $("#dataList tbody").append(labelIntbody);
+        // addOnclick(data[i].date);
         console.log(data);
         }
     }
+
+    function deleteData(date) {
+		var flag = confirm("确定要删除吗？");
+		if(true == flag){
+		    var params = $.param({"site":$("#sitechose option:selected").val(),"date":date});
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url:'<%=request.getContextPath()%>/dataDelete.action',
+                async: false,
+                data: params,
+                error: function(request)
+                {
+                    console.log(" dataDelete ajax error");
+                },
+                success: function(data)
+                {
+                    if(data == "success"){
+                        $("#queryButton").trigger("click");
+                        console.log("删除成功!");
+					}else{
+                        console.log("data"+data);
+					}
+                }
+            });
+		}
+    }
+
 </script>
 </body>
 </html>

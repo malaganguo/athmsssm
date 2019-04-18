@@ -9,4 +9,6 @@ import java.util.List;
 public interface IDataQueryDao {
 
     List<HoursDataModel> dataQueryByTimeAndSite(HoursDataConditionModel conditionModel) throws Exception;
+
+    void dataDeleteBySiteAndData(@Param("site") String site ,@Param("date") String date);
 }

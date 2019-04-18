@@ -19,6 +19,10 @@
         SELECT COUNT(*) FROM site;
     </select>
 
+    <delete id="deleteSiteBySiteId" parameterType="int">
+        DELETE FROM site WHERE siteId = #{siteId};
+    </delete>
+
 
 </mapper>
 
