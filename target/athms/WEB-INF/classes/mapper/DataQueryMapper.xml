@@ -17,6 +17,12 @@
             </if>
         </where>
     </select>
+    <select id="dataQueryByTimeAndAllSite" parameterType="java.util.List" resultType="com.malaganguo.athmsssm.model.HoursDataModel">
+
+          <foreach collection="sites" index="index" item="sites">
+              SELECT date,temperature,humidity,siteName FROM site LEFT OUTER JOIN ${sites} ON site.siteName = ${sites}.siteName;
+          </foreach>
+    </select>
 
     <delete id="dataDeleteBySiteAndData" parameterType="String">
         DELETE FROM ${site} WHERE DATE = #{date}

@@ -76,10 +76,10 @@
 
                     <ul class="breadcrumb">
                         <li>
-                            <a href="index.html">首页</a> <span class="divider">/</span>
+                            <a href="<%=request.getContextPath()%>/toMain.action">首页</a> <span class="divider">/</span>
                         </li>
                         <li class="active">数据分析</li> <span class="divider">/</span>
-                        <li class=""><a href="#">温度分析</a></li>
+                        <li class=""><a href="<%=request.getContextPath()%>/toAnalysisTemp.action">温度分析</a></li>
                     </ul>
                 </div>
             </div>
@@ -292,145 +292,9 @@
                 <div class="row">
                     <div class="span12">
                         <div id="container3" class="span2" style="min-width: 550px; min-height: 400px; float:left"></div>
-                        <%--<script type="text/javascript">
-                            var chart = Highcharts.chart('container3', {
-                                chart: {
-                                    type: 'column'
-                                },
-                                title: {
-                                    text: '温度统计'
-                                },
-                                subtitle: {
-                                    text: ''
-                                },
-                                xAxis: {
-                                    type: 'category',
-                                    labels: {
-                                        rotation: -45  // 设置轴标签旋转角度
-                                    }
-                                },
-                                yAxis: {
-                                    min: 0,
-                                    title: {
-                                        text: '温度（℃）'
-                                    }
-                                },
-                                legend: {
-                                    enabled: false
-                                },
-                                tooltip: {
-                                    pointFormat: '人口总量: <b>{point.y:.1f} 百万</b>'
-                                },
-                                series: [{
-                                    name: '总人口',
-                                    data: [
-                                        ['上海', 24.25],
-                                        ['卡拉奇', 23.50],
-                                        ['北京', 21.51],
-                                        ['德里', 16.78],
-                                        ['拉各斯', 16.06],
-                                        ['天津', 15.20],
-                                        ['伊斯坦布尔', 14.16],
-                                        ['东京', 13.51],
-                                        ['广州', 13.08],
-                                        ['孟买', 12.44],
-                                        ['莫斯科', 12.19],
-                                        ['圣保罗', 12.03],
-                                        ['深圳', 10.46],
-                                        ['雅加达', 10.07],
-                                        ['拉合尔', 10.05],
-                                        ['首尔', 9.99],
-                                        ['武汉', 9.78],
-                                        ['金沙萨', 9.73],
-                                        ['开罗', 9.27],
-                                        ['墨西哥', 8.87]
-                                    ],
-                                    dataLabels: {
-                                        enabled: true,
-                                        rotation: -90,
-                                        color: '#FFFFFF',
-                                        align: 'right',
-                                        format: '{point.y:.1f}', // :.1f 为保留 1 位小数
-                                        y: 10
-                                    }
-                                }]
-                            });
-                        </script>--%>
+
                         <div id="container4" class="span2" style="min-width: 550px; min-height: 400px; float:left"></div>
-                        <%--<script type="text/javascript">
-                            var chart = Highcharts.chart('container4', {
-                                chart: {
-                                    zoomType: 'xy'
-                                },
-                                title: {
-                                    text: 'site温度和湿度数据对比'
-                                },
-                                subtitle: {
-                                    text: '数据来源: site'
-                                },
-                                xAxis: [{
-                                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                                    crosshair: true
-                                }],
-                                yAxis: [{ // Primary yAxis
-                                    labels: {
-                                        format: '{value}°C',
-                                        style: {
-                                            color: Highcharts.getOptions().colors[1]
-                                        }
-                                    },
-                                    title: {
-                                        text: '温度',
-                                        style: {
-                                            color: Highcharts.getOptions().colors[1]
-                                        }
-                                    }
-                                }, { // Secondary yAxis
-                                    title: {
-                                        text: '湿度',
-                                        style: {
-                                            color: Highcharts.getOptions().colors[0]
-                                        }
-                                    },
-                                    labels: {
-                                        format: '{value} mm',
-                                        style: {
-                                            color: Highcharts.getOptions().colors[0]
-                                        }
-                                    },
-                                    opposite: true
-                                }],
-                                tooltip: {
-                                    shared: true
-                                },
-                                legend: {
-                                    layout: 'vertical',
-                                    align: 'left',
-                                    x: 120,
-                                    verticalAlign: 'top',
-                                    y: 100,
-                                    floating: true,
-                                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-                                },
-                                series: [{
-                                    name: '湿度',
-                                    type: 'column',
-                                    yAxis: 1,
-                                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-                                    tooltip: {
-                                        valueSuffix: ' mm'
-                                    }
-                                }, {
-                                    name: '温度',
-                                    type: 'spline',
-                                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
-                                    tooltip: {
-                                        valueSuffix: '°C'
-                                    }
-                                }]
-                            });
-                        </script>--%>
+
                     </div>
 
                 </div>
@@ -457,6 +321,27 @@
 <script src="<%=request.getContextPath()%>/assets/js/highcharts/highcharts.js"></script>
 
 <!--highcharts的图标引入-->
+
+<script>
+    $.ajax({
+        cache: false,
+        type: "GET",
+        url:'<%=request.getContextPath()%>/selectAllSite.action',
+        async: false,
+        dataType: 'json',
+        error: function(request)
+        {
+            console.log("select site ajax error");
+        },
+        success: function(data)
+        {
+            $("#select-site").append("<option value='"+data[0].siteTable+"' selected> "+data[0].siteName+" </option>");
+            for(var i=1;i<data.length;i++){
+                $("#select-site").append("<option value='"+data[i].siteTable+"'> "+data[i].siteName+"</option>");
+            }
+        }
+    });
+</script>
 
 <script type="text/javascript">
     var analysisdata = null;
@@ -520,7 +405,7 @@
             timeStr[i] = arr[i].date;
             chart1Data[i] = parseInt(arr[i].temperature);
         }
-        chart1();
+        chart1(chart1Data);
 
 
         var percentt = new Array();

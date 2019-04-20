@@ -14,5 +14,6 @@ public interface IUserDao {
 
     //总用户数
     int selectCountUser();
-
+    //管理员人数
+    int selectCountAdmin();
 }

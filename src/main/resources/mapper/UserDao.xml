@@ -25,5 +25,8 @@
     <select id="selectCountUser" resultType="int">
         SELECT COUNT(*) FROM user;
     </select>
+    <select id="selectCountAdmin" resultType="int">
+        SELECT COUNT(*) FROM user WHERE role = 'root';
+    </select>
 </mapper>
 

@@ -4,7 +4,9 @@ import com.google.gson.Gson;
 import com.malaganguo.athmsssm.dao.IDataAnalysisDao;
 import com.malaganguo.athmsssm.model.AnalysisConditionModel;
 import com.malaganguo.athmsssm.model.BarChartModel;
+import com.malaganguo.athmsssm.model.ChartHumModel;
 import com.malaganguo.athmsssm.model.ChartModel;
+import com.malaganguo.athmsssm.model.HumPeakModel;
 import com.malaganguo.athmsssm.model.PieChartModel;
 import com.malaganguo.athmsssm.model.TempAndHumModel;
 import com.malaganguo.athmsssm.model.TempPeakModel;
@@ -71,4 +73,47 @@ public class DataAnalysisServiceImpl implements IDataAnalysisService {
         }
         return null;
     }
+
+    @Override
+    public List<Object> selectAllAboutHumidityResult(AnalysisConditionModel conditionModel) {
+        String analysisScope = conditionModel.getAnalysisScope();
+        List<Object> list = new ArrayList<>();
+        if("day".equals(analysisScope)){
+            //峰值查询
+            HumPeakModel humPeakModel = dataAnalysisDao.selectDayPeakHumidity(conditionModel);//极值
+            List<ChartHumModel> chartModels = dataAnalysisDao.selectDayTimeAndHumidity(conditionModel);//折线图数据
+            //饼图数据填充
+            int pieChartModels1 = dataAnalysisDao.selectPieChartHumidity1(conditionModel);
+            int pieChartModels2 = dataAnalysisDao.selectPieChartHumidity2(conditionModel);
+            int pieChartModels3 = dataAnalysisDao.selectPieChartHumidity3(conditionModel);
+            int pieChartModels4 = dataAnalysisDao.selectPieChartHumidity4(conditionModel);
+            double lt = new BigDecimal(pieChartModels2 * 1.0 / pieChartModels1 *100).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+            double bt = new BigDecimal(pieChartModels3 * 1.0 / pieChartModels1*100).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+            double between = new BigDecimal(pieChartModels4 * 1.0 / pieChartModels1 * 100).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+            PieChartModel pieChartModel = new PieChartModel();
+            pieChartModel.setLowScopeTemp(lt);
+            pieChartModel.setBetweenScopeTemp(bt);
+            pieChartModel.setHighScopeTemp(between);
+            //柱状图数据填充
+            List<BarChartModel> barChartModels = dataAnalysisDao.selectBarChartHumidity(conditionModel);
+            //温湿度对比图数据填充
+            List<TempAndHumModel> tempAndHumModels = dataAnalysisDao.selectTempAndHumChart(conditionModel);
+
+            list.add(humPeakModel);
+            list.add(chartModels);
+            list.add(pieChartModel);
+            list.add(barChartModels);
+            list.add(tempAndHumModels);
+            LOGGER.debug("##analysis result data is :{}"+list);
+            return list;
+        }else if("month".equals(analysisScope)){
+
+        }else if ("year".equals(analysisScope)){
+
+        }else {
+            LOGGER.debug("fail:{can't find analysis scope}");
+        }
+        return null;
+    }
+
 }

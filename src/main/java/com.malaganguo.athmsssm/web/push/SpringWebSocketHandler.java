@@ -26,6 +26,7 @@ public class SpringWebSocketHandler extends TextWebSocketHandler {
      */
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         users.add(session);
+
         System.out.println("connect to the websocket success......当前数量:"+users.size());
         session.sendMessage(new TextMessage("hello"));
         ActiveMQCustomer.activeMQConsumerQueue(session);
@@ -40,8 +41,8 @@ public class SpringWebSocketHandler extends TextWebSocketHandler {
      * 关闭连接时触发
      */
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
-        logger.debug("websocket connection closed......");
-        /*String username= (String) session.getAttributes().get("WEBSOCKET_USERNAME");
+        /*logger.debug("websocket connection closed......");
+        String username= (String) session.getAttributes().get("WEBSOCKET_USERNAME");
         System.out.println("用户"+username+"已退出！");
         users.remove(session);
         System.out.println("剩余在线用户"+users.size());*/

@@ -8,11 +8,15 @@
         SELECT * FROM site;
     </select>
 
+    <select id="selectAllSiteName" resultType="String">
+        SELECT siteName FROM site ;
+    </select>
+
     <insert id="addSite" parameterType="com.malaganguo.athmsssm.model.SiteModel">
         <selectKey keyProperty="siteId" resultType="int" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        INSERT INTO site(siteName,siteArea,addPerson,addTime) VALUES( #{siteName} , #{siteArea} , #{addPerson} , #{addTime})
+        INSERT INTO site(siteName,siteTable,siteArea,addPerson,addTime) VALUES( #{siteName} , #{siteTable} , #{siteArea} , #{addPerson} , #{addTime})
     </insert>
 
     <select id="selectCountSite" resultType="int">
@@ -22,6 +26,30 @@
     <delete id="deleteSiteBySiteId" parameterType="int">
         DELETE FROM site WHERE siteId = #{siteId};
     </delete>
+
+    <update id="createSiteTable" parameterType="String">
+        CREATE TABLE ${tableName}   (
+        `wholeDate` VARCHAR(255) DEFAULT NULL,
+        `date` VARCHAR(255) DEFAULT NULL,
+        `minutes` VARCHAR(255) DEFAULT NULL,
+        `second` VARCHAR(255) DEFAULT NULL,
+        `temperature` VARCHAR(255) DEFAULT NULL,
+        `humidity` VARCHAR(255) DEFAULT NULL
+        ) ENGINE=INNODB DEFAULT CHARSET=utf8
+
+    </update>
+
+    <update id="dropSiteTable" parameterType="String">
+        DROP TABLE ${tableName};
+    </update>
+
+    <select id="selectSiteTableById" parameterType="int" resultType="String">
+        SELECT siteTable FROM site WHERE siteId = #{id};
+    </select>
+
+    <select id="selectAllSiteTable" resultType="String">
+        SELECT siteTable FROM site ;
+    </select>
 
 
 </mapper>

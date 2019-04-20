@@ -1,6 +1,7 @@
 package com.malaganguo.athmsssm.service.impl;
 
 import com.malaganguo.athmsssm.dao.IDataQueryDao;
+import com.malaganguo.athmsssm.dao.ISiteDao;
 import com.malaganguo.athmsssm.model.HoursDataConditionModel;
 import com.malaganguo.athmsssm.model.HoursDataModel;
 import com.malaganguo.athmsssm.service.IDataQueryService;
@@ -15,10 +16,19 @@ public class DataQueryServiceImpl implements IDataQueryService {
     @Autowired
     private IDataQueryDao DataQueryDao;
 
+    @Autowired
+    private ISiteDao siteDao;
+
     @Override
     public List<HoursDataModel> selectDataByTimeAndSite(HoursDataConditionModel conditionModel) throws Exception{
-        List<HoursDataModel> hoursDataModels = DataQueryDao.dataQueryByTimeAndSite(conditionModel);
-        return hoursDataModels;
+        /*if(null == conditionModel.getSite() || "" == conditionModel.getSite()){
+            List<String> sites = siteDao.selectAllSiteTable();
+            return DataQueryDao.dataQueryByTimeAndAllSite(sites);
+        }else {*/
+            List<HoursDataModel> hoursDataModels = DataQueryDao.dataQueryByTimeAndSite(conditionModel);
+            return hoursDataModels;
+//        }
+
     }
 
     @Override

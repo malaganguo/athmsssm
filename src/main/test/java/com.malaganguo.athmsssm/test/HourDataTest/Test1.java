@@ -16,7 +16,7 @@ public class Test1 {
     @Test
     public void test1() throws Exception {
         UserLoginServiceImpl userLoginService = new UserLoginServiceImpl();
-        User xxxxx = userLoginService.findUser("123", "xxxxx");
+        User xxxxx = userLoginService.findUser("aloha", "aloha");
         System.out.println(xxxxx.toString());
     }
 }

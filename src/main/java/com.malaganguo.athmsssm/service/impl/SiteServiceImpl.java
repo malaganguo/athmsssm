@@ -15,8 +15,14 @@ public class SiteServiceImpl implements ISiteService {
     private ISiteDao siteDao;
 
     @Override
-    public void addSite(SiteModel site) {
+    public boolean addSite(SiteModel site) {
+        List<String> sitesName = siteDao.selectAllSiteName();
+        if(sitesName.contains(site.getSiteName())){
+            return false ;
+        }
         siteDao.addSite(site);
+        siteDao.createSiteTable(site.getSiteTable());
+        return true;
     }
 
     @Override
@@ -27,6 +33,8 @@ public class SiteServiceImpl implements ISiteService {
     @Override
     public void deleteSiteBySiteId(int siteId) {
         siteDao.deleteSiteBySiteId(siteId);
+        String siteTable = siteDao.selectSiteTableById(siteId);
+        siteDao.dropSiteTable(siteTable);
     }
 
 

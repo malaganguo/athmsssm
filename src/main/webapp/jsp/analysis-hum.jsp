@@ -79,7 +79,7 @@
                             <a href="index.html">首页</a> <span class="divider">/</span>
                         </li>
                         <li class="active">数据分析</li> <span class="divider">/</span>
-                        <li class=""><a href="#">温度分析</a></li>
+                        <li class=""><a href="<%=request.getContextPath()%>/toAnalysisHum.action">湿度分析</a></li>
                     </ul>
                 </div>
             </div>
@@ -100,8 +100,6 @@
                                         <label class="control-label">选择站点</label>
                                         <div class="controls">
                                             <select class="input-xlarge" id="select-site">
-                                                <option value="site_1_hourdata">A</option>
-                                                <option value="site_2_hourdata">B</option>
                                             </select>
                                         </div>
                                     </div>
@@ -141,7 +139,7 @@
                                         <label class="control-label">最低门限</label>
                                         <div class="controls" id="analysis-minthreshold">
                                             <input type="text" placeholder="请输入温度最低门限" class="input-xlarge search-query">
-                                            <p class="help-block">-20℃~70℃</p>
+                                            <p class="help-block">0~100%</p>
                                         </div>
 
                                     </div>
@@ -150,7 +148,7 @@
                                         <label class="control-label">最高门限</label>
                                         <div class="controls" id="analysis-maxthreshold">
                                             <input type="text" placeholder="请输入温度最高门限" class="input-xlarge">
-                                            <p class="help-block">-20℃~70℃</p>
+                                            <p class="help-block">0~100%</p>
                                         </div>
                                     </div>
                                     <div class="control-group span12">
@@ -181,10 +179,10 @@
                         <table class="table table-striped" id="displayPeak">
                             <thead>
                             <tr>
-                                <th>最高温度</th>
-                                <th>最低温度</th>
-                                <th>平均温度</th>
-                                <th>适宜温度比重</th>
+                                <th>最大湿度</th>
+                                <th>最小湿度</th>
+                                <th>平均湿度</th>
+                                <th>适宜湿度比重</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -240,7 +238,26 @@
 <script src="<%=request.getContextPath()%>/assets/js/highcharts/highcharts.js"></script>
 
 <!--highcharts的图标引入-->
-
+<script>
+    $.ajax({
+        cache: false,
+        type: "GET",
+        url:'<%=request.getContextPath()%>/selectAllSite.action',
+        async: false,
+        dataType: 'json',
+        error: function(request)
+        {
+            console.log("select site ajax error");
+        },
+        success: function(data)
+        {
+            $("#select-site").append("<option value='"+data[0].siteTable+"' selected> "+data[0].siteName+" </option>");
+            for(var i=1;i<data.length;i++){
+                $("#select-site").append("<option value='"+data[i].siteTable+"'> "+data[i].siteName+"</option>");
+            }
+        }
+    });
+</script>
 <script type="text/javascript">
     var analysisdata = null;
     var timeStr = new Array();
@@ -269,7 +286,7 @@
         $.ajax({
             cache: false,
             type: "GET",
-            url:'<%=request.getContextPath()%>/getAnalysisResult.action',
+            url:'<%=request.getContextPath()%>/getHumAnalysisResult.action',
             async: false,
             data: params,
             dataType: 'json',
@@ -292,18 +309,18 @@
     function insertAnalysisResultIntoHtml(data){
 
         //表单数据
-        $("#displayPeak tbody tr td").eq(0).text(data[0].maxTemp+"℃");
-        $("#displayPeak tbody tr td").eq(1).text(data[0].minTemp+"℃");
-        $("#displayPeak tbody tr td").eq(2).text(data[0].avgTemp+"℃");
+        $("#displayPeak tbody tr td").eq(0).text(data[0].maxHum+"%");
+        $("#displayPeak tbody tr td").eq(1).text(data[0].minHum+"%");
+        $("#displayPeak tbody tr td").eq(2).text(data[0].avgHum+"%");
         $("#displayPeak tbody tr td").eq(3).text(data[0].percent);
         //折线图数据
         var arr = data[1];
 
         for(var i=0;i<analysisdata[1].length;i++){
             timeStr[i] = arr[i].date;
-            chart1Data[i] = parseInt(arr[i].temperature);
+            chart1Data[i] = parseInt(arr[i].humidity);
         }
-        chart1();
+        chart1(chart1Data);
 
 
         var percentt = new Array();

@@ -1,4 +1,4 @@
-function chart1() {
+function chart1(chart1Data) {
     Highcharts.chart('container1', {
         chart: {
             type: 'line'
@@ -7,7 +7,7 @@ function chart1() {
             text: '温度折线图'
         },
         subtitle: {
-            text: '数据来源: #{site}'
+            text: '数据来源:'+$("#select-site option:selected").text()
         },
         xAxis: {
             // categories: ["一月",'二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
@@ -114,28 +114,6 @@ function chart3(chart3data) {
         },
         series: [{
             name: '总人口',
-            /*data: [
-                ['上海', 24.25],
-                ['卡拉奇', 23.50],
-                ['北京', 21.51],
-                ['德里', 16.78],
-                ['拉各斯', 16.06],
-                ['天津', 15.20],
-                ['伊斯坦布尔', 14.16],
-                ['东京', 13.51],
-                ['广州', 13.08],
-                ['孟买', 12.44],
-                ['莫斯科', 12.19],
-                ['圣保罗', 12.03],
-                ['深圳', 10.46],
-                ['雅加达', 10.07],
-                ['拉合尔', 10.05],
-                ['首尔', 9.99],
-                ['武汉', 9.78],
-                ['金沙萨', 9.73],
-                ['开罗', 9.27],
-                ['墨西哥', 8.87]
-            ],*/
             data:chart3data,
             dataLabels: {
                 enabled: true,

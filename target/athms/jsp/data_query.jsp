@@ -85,8 +85,8 @@
 											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 										<select class="span2 select-aloha" id="sitechose">
-											<option value="site_1_hourdata" selected>A点</option><!--value等于表名-->
-											<option value="site_2_hourdata">B点</option>
+											<%--<option value="site_1_hourdata" selected>A点</option><!--value等于表名-->
+											<option value="site_2_hourdata">B点</option>--%>
 										</select>
 										<input type="hidden" id="dtp_input2" value="" />
 										<input type="hidden" id="dtp_input1" value="" />
@@ -227,20 +227,37 @@
     });
     function insertResultIntoTable(data) {
         $("#dataList tbody").html("");
-        for(var i = 0 ; i < data.length ; i++){
-        var labelIntbody = "<tr>\n" +
-            "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].date+"</a></td>\n" +
-            "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+$("#sitechose option:selected").text()+"</a></td>\n" +
-            "\t\t\t\t\t\t\t\t<td><a href=\"#\">"+data[i].temperature+"℃</a></td>\n" +
-            "                                <td><a href=\"#\">"+data[i].humidity+"RH</a></td>\n" +
-            "\t\t\t\t\t\t\t\t<td>\n" +
-            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
-            "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"javascript:void(0);\" onclick='deleteData("+data[i].date+")'>删除</a>\n" +
-            "\t\t\t\t\t\t\t\t</td>\n" +
-            "\t\t\t\t\t\t\t</tr>";
-        $("#dataList tbody").append(labelIntbody);
-        // addOnclick(data[i].date);
-        console.log(data);
+        if(${user.status == 1}) {
+            for (var i = 0; i < data.length; i++) {
+
+                var labelIntbody = "<tr>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].date + "</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].siteName + "</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].temperature + "℃</a></td>\n" +
+                    "                                <td><a href=\"#\">" + data[i].humidity + "RH</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td>\n" +
+                    "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
+                    "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"javascript:void(0);\" onclick='deleteData(" + data[i].date + ")'>删除</a>\n" +
+                    "\t\t\t\t\t\t\t\t</td>\n" +
+                    "\t\t\t\t\t\t\t</tr>";
+
+                $("#dataList tbody").append(labelIntbody);
+            }
+        }else {
+            for (var i = 0; i < data.length; i++) {
+
+                var labelIntbody = "<tr>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].date + "</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + $("#sitechose option:selected").text() + "</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].temperature + "℃</a></td>\n" +
+                    "                                <td><a href=\"#\">" + data[i].humidity + "RH</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td>\n" +
+                    "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
+                    "\t\t\t\t\t\t\t\t</td>\n" +
+                    "\t\t\t\t\t\t\t</tr>";
+
+                $("#dataList tbody").append(labelIntbody);
+            }
         }
     }
 
@@ -271,6 +288,28 @@
 		}
     }
 
+</script>
+<script>
+    $.ajax({
+        cache: false,
+        type: "GET",
+        url:'<%=request.getContextPath()%>/selectAllSite.action',
+        async: false,
+        data: {},
+        dataType: 'json',
+        error: function(request)
+        {
+            console.log("ajax error");
+        },
+        success: function(data)
+        {
+            $("#sitechose").append("<option value='' selected>--请选择--</option>");
+            $("#sitechose").append("<option value='"+data[0].siteTable+"_hourdata' selected> "+data[0].siteName+"点 </option>");
+            for(var i=1;i<data.length;i++){
+                $("#sitechose").append("<option value='"+data[i].siteTable+"_hourdata'> "+data[i].siteName+"点 </option>");
+            }
+        }
+    });
 </script>
 </body>
 </html>

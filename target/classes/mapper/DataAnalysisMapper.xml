@@ -10,14 +10,28 @@
     <select id="selectPeakTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.TempPeakModel">
         SELECT DISTINCT MAX(CAST(temperature AS UNSIGNED INTEGER)) AS maxTemp,MIN(CAST(temperature AS UNSIGNED INTEGER)) AS minTemp,AVG(CAST(temperature AS UNSIGNED INTEGER)) AS avgTemp,((SELECT COUNT(CAST(temperature AS UNSIGNED INTEGER)) FROM ${site} WHERE CAST(temperature AS UNSIGNED INTEGER) BETWEEN #{minThreshold} AND #{maxThreshold})/(SELECT COUNT(temperature) FROM ${site})) AS percent FROM ${site} WHERE DATE BETWEEN #{starttime} AND #{endtime};
     </select>
+
+
     <!--日极值数据查询-->
     <select id="selectDayPeakTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.TempPeakModel">
         SELECT DISTINCT MAX(CAST(temperature AS UNSIGNED INTEGER)) AS maxTemp,MIN(CAST(temperature AS UNSIGNED INTEGER)) AS minTemp,AVG(CAST(temperature AS UNSIGNED INTEGER)) AS avgTemp,((SELECT COUNT(CAST(temperature AS UNSIGNED INTEGER)) FROM ${site} WHERE CAST(temperature AS UNSIGNED INTEGER) BETWEEN #{minThreshold} AND #{maxThreshold})/(SELECT COUNT(temperature) FROM ${site})) AS percent FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
     </select>
+
+    <select id="selectDayPeakHumidity" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.HumPeakModel">
+        SELECT DISTINCT MAX(CAST(humidity AS UNSIGNED INTEGER)) AS maxHum,MIN(CAST(humidity AS UNSIGNED INTEGER)) AS minHum,AVG(CAST(humidity AS UNSIGNED INTEGER)) AS avgHum,((SELECT COUNT(CAST(humidity AS UNSIGNED INTEGER)) FROM ${site} WHERE CAST(humidity AS UNSIGNED INTEGER) BETWEEN #{minThreshold} AND #{maxThreshold})/(SELECT COUNT(humidity) FROM ${site})) AS percent FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
+    </select>
+
+
     <!--日时间温度数据查询-->
     <select id="selectDayTimeAndTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.ChartModel">
         SELECT DATE,temperature FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
     </select>
+
+    <select id="selectDayTimeAndHumidity" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.ChartHumModel">
+        SELECT DATE,humidity FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
+    </select>
+
+
 
     <!--日温度比例数据查询-->
     <select id="selectPieChartTemperature1" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="int">
@@ -33,14 +47,39 @@
            SELECT COUNT(temperature) AS highScopeTemp FROM ${site} WHERE (CAST(temperature AS UNSIGNED INTEGER) &gt; #{maxThreshold}) AND CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
     </select>
 
+    <select id="selectPieChartHumidity1" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="int">
+            SELECT COUNT(humidity) AS allHum FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
+    </select>
+    <select id="selectPieChartHumidity2" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="int">
+            SELECT COUNT(humidity) AS lowScopeHum FROM ${site} WHERE CAST(humidity AS UNSIGNED INTEGER) &lt; #{minThreshold} AND CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
+    </select>
+    <select id="selectPieChartHumidity3" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="int">
+            SELECT COUNT(humidity) AS betweenScopeHum FROM ${site} WHERE (CAST(humidity AS UNSIGNED INTEGER) BETWEEN #{minThreshold} AND #{maxThreshold}) AND CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
+    </select>
+    <select id="selectPieChartHumidity4" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="int">
+            SELECT COUNT(humidity) AS highScopeHum FROM ${site} WHERE (CAST(humidity AS UNSIGNED INTEGER) &gt; #{maxThreshold}) AND CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime};
+    </select>
+
+
+
+
     <!--柱状图：温度数据统计-->
     <select id="selectBarChartTemperature" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.BarChartModel">
            SELECT temperature,COUNT(temperature) AS countTemp FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime} GROUP BY temperature ORDER BY temperature DESC;
     </select>
 
+    <select id="selectBarChartHumidity" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.BarChartModel">
+           SELECT humidity AS temperature,COUNT(humidity) AS countTemp FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime} GROUP BY humidity ORDER BY humidity DESC;
+    </select>
+
+
+
+
     <!--点柱图温湿度统计-->
     <select id="selectTempAndHumChart" parameterType="com.malaganguo.athmsssm.model.AnalysisConditionModel" resultType="com.malaganguo.athmsssm.model.TempAndHumModel">
            SELECT DATE,temperature,humidity FROM ${site} WHERE CAST(DATE AS UNSIGNED INTEGER) BETWEEN #{starttime} AND #{endtime} ORDER BY CAST(DATE AS UNSIGNED INTEGER);
     </select>
+
+
 
 </mapper>

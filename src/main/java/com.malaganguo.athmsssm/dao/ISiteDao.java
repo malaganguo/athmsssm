@@ -18,4 +18,20 @@ public interface ISiteDao {
 
     //删除站点
     void deleteSiteBySiteId(@Param("siteId") int SiteId);
+
+    //创建站点表
+    void createSiteTable(@Param("tableName") String tableName);
+
+    //删除站点表
+    void dropSiteTable(@Param("tableName") String tableName);
+
+    //搜索站点名称
+    List<String> selectAllSiteName();
+
+    //根据id查询表名
+    String selectSiteTableById(int id);
+
+    //查询所有站点表名
+    List<String> selectAllSiteTable();
+
 }

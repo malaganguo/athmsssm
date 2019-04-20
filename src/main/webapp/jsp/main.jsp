@@ -88,8 +88,8 @@
                     <div class="span10">
                         <div class="slate clearfix">
                             <a class="stat-column" href="#"> <span class="number">${countSite}</span><span>采集点数</span> </a>
-                            <a class="stat-column" href="#"> <span class="number">${countUser}</span><span>管理人员数</span> </a>
-                            <a class="stat-column" href="#"> <span class="number">1</span><span>当前在线人数</span> </a>
+                            <a class="stat-column" href="#"> <span class="number">${countAdmin}</span><span>管理人员数</span> </a>
+                            <a class="stat-column" href="#"> <span class="number">${countUser}</span><span>普通用户数</span> </a>
                             <a class="stat-column" href="#"> <span class="number">1</span><span>异常点数</span> </a></div>
                     </div>
                 </div>
@@ -100,8 +100,6 @@
                                     class="icon-signal pull-right"></i>实时数据</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <span>
                                     <select id="realTimeDataSelect">
-                                      <option value="A" selected> A点实时数据 </option>
-                                      <option value="B"> B点实时数据 </option>
                                     </select>
                                 </span>
                             </div>
@@ -131,24 +129,19 @@
                             <table class="table" id="newsReport">
                                 <tbody>
                                 <tr>
-                                    <td><a href="">新闻新闻新闻新闻</a></td>
-                                    <td class="date">10点28分</td>
+                                    <td><a href="" target="_blank">新闻新闻新闻新闻</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">新闻新闻新闻新闻</a></td>
-                                    <td class="date">10点28分</td>
+                                    <td><a href="" target="_blank">新闻新闻新闻新闻</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">新闻新闻新闻新闻</a></td>
-                                    <td class="date">10点28分</td>
+                                    <td><a href="" target="_blank">新闻新闻新闻新闻</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">新闻新闻新闻新闻</a></td>
-                                    <td class="date">10点28分</td>
+                                    <td><a href="" target="_blank">新闻新闻新闻新闻</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">新闻新闻新闻新闻</a></td>
-                                    <td class="date">10点28分</td>
+                                    <td><a href="" target="_blank">新闻新闻新闻新闻</a></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><a href="http://www.agronet.com.cn/" target="_blank">更多农业新闻</a></td>
@@ -181,26 +174,7 @@
 <script src="<%=request.getContextPath()%>/assets/js/excanvas.min.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/jquery.flot.min.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/jquery.flot.resize.js"></script>
-<script>
-    $(document).ready(function () {
-        $.ajax({
-            cache: false,
-            type: "GET",
-            url:'<%=request.getContextPath()%>/pageStatus.action',
-            async: false,
-            data: {},
-            dataType: 'json',
-            error: function(request)
-            {
-                console.log("main data ajax error");
-            },
-            success: function(data)
-            {
-
-            }
-        });
-    })
-</script>
+<!--百度地图-->
 <script>
     //标注点数组
     /*var markerArr = [{title:"我的标记",content:"我的备注",point:"108.896288|34.330744",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}];*/
@@ -322,6 +296,7 @@
 
     initMap("dituContent");//创建和初始化地图
 </script>
+<!--获取新闻-->
 <script>
     var newsData ;
     $.ajax({
@@ -355,8 +330,7 @@
         }
     });
 </script>
-<%--<script>
-    $(document).ready(function () {
+<script>
         $.ajax({
             cache: false,
             type: "GET",
@@ -369,17 +343,13 @@
             },
             success: function(data)
             {
-                $("#realTimeDataSelect"),append("<option value=\"A\" selected> "+data[i].siteName+"点实时数据 </option>");
-                for(var i=0;i<data.length;i++){
-
-                    var site = data[i].siteArea;//x:93.435085,y:44.261267
-
-                    markerArr[i] = {title: "站点名："+data[i].siteName ,content:"添加人："+data[i].addPerson ,point:data[i].siteArea,isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}};
+                $("#realTimeDataSelect").append("<option value='"+data[0].siteTable+"' selected> "+data[0].siteName+"点实时数据 </option>");
+                for(var i=1;i<data.length;i++){
+                    $("#realTimeDataSelect").append("<option value='"+data[i].siteTable+"'> "+data[i].siteName+"点实时数据 </option>");
                 }
             }
         });
-    });
-</script>--%>
+</script>
 
 
 </body>

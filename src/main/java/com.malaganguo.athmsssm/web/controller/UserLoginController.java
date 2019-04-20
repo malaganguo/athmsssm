@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -28,16 +29,19 @@ public class UserLoginController {
 
     @RequestMapping("/userLogin.action")
     public String userLogin(HttpServletRequest request, @Param("username")String username, @Param("password")String password,Model model){
-
         User user = userLoginService.findUser(username, password);
         if(user == null || user.equals(null)){
+            request.setAttribute("noUser","用户名或密码错误");
             return "login";
+        }else{
+            request.getSession().setAttribute("user",user);
         }
-        ServletContext servletContext = request.getServletContext();
-        servletContext.setAttribute("user",user);
+//        ServletContext servletContext = request.getServletContext();
+//        servletContext.setAttribute("user",user);
         List<Integer> list = mainPageService.selectMainPageStatus();
         model.addAttribute("countSite",list.get(0));
         model.addAttribute("countUser",list.get(1));
+        model.addAttribute("countAdmin",list.get(2));
         return "main";
 
     }
@@ -63,7 +67,9 @@ public class UserLoginController {
     }
 
     @RequestMapping("/UserLogout.action")
-    public ModelAndView  UserLogout(){
+    public ModelAndView  UserLogout(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.invalidate();//销毁session
         ModelAndView mav = new ModelAndView();
         mav.setViewName("login");
         return mav;

@@ -29,9 +29,18 @@ public class SiteManageController {
         site.setSiteArea(request.getParameter("siteArea"));
         site.setAddPerson(request.getParameter("addPerson"));
         site.setAddTime(request.getParameter("addTime"));
-        siteService.addSite(site);
-        LOGGER.debug("新建站点，站点信息："+site.toString());
-        return GSON.toJson("selectResult");
+        String siteTable = "site_"+request.getParameter("siteName");
+        site.setSiteTable(siteTable);
+        boolean addResult = siteService.addSite(site);//添加成功返回true
+        if(addResult){
+            LOGGER.debug("##新建站点，站点信息："+site.toString());
+            return "true";
+        }else{
+            LOGGER.debug("##站点已存在，创建站点"+site.getSiteName()+"失败");
+            return "false";
+        }
+
+
     }
 
 
@@ -44,12 +53,18 @@ public class SiteManageController {
     @RequestMapping("/importSite.action")
     @ResponseBody
     public String importSite(@RequestBody List<SiteModel> list){
-        for (SiteModel sm: list
-             ) {
-            sm.setAddTime(FormatTimeUtils.formatDayTime(sm.getAddTime()));
-            siteService.addSite(sm);
+        try {
+            for (SiteModel sm: list
+                 ) {
+                sm.setSiteTable("site_"+sm.getSiteName());
+                sm.setAddTime(FormatTimeUtils.formatDayTime(sm.getAddTime()));
+                siteService.addSite(sm);
+            }
+            return "success";
+        } catch (Exception e) {
+            LOGGER.debug("导入站点失败，失败原因："+e.getMessage());
+            return "fail";
         }
-        return "success";
     }
 
     @RequestMapping("/deleteSite.action")

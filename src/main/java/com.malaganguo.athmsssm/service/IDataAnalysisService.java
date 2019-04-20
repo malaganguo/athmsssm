@@ -10,4 +10,6 @@ public interface IDataAnalysisService {
     TempPeakModel selectPeakTemperature(AnalysisConditionModel conditionModel);
 
     List<Object> selectAllAboutTemperatureResult(AnalysisConditionModel conditionModel);
+
+    List<Object> selectAllAboutHumidityResult(AnalysisConditionModel conditionModel);
 }

@@ -22,8 +22,10 @@ public class MainPageServiceImpl implements IMainPageService {
         ArrayList<Integer> list = new ArrayList<>();
         int countSite = siteDao.selectCountSite();
         int countUser = userDao.selectCountUser();
+        int countAdmin = userDao.selectCountAdmin();
         list.add(countSite);
         list.add(countUser);
+        list.add(countAdmin);
         return list;
     }
 }

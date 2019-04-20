@@ -37,7 +37,7 @@ public class DataQueryController {
             if("" !=endtime){
                 endtime = FormatTimeUtils.getFormatStringDate((parameterMap.get("endtime"))[0])+" 23";
             }
-            LOGGER.info("##request params:{site"+site+",starttime:"+starttime+",endtime:"+endtime+"}");
+            LOGGER.info("##request params:{site:"+site+",starttime:"+starttime+",endtime:"+endtime+"}");
             HoursDataConditionModel conditionModel = new HoursDataConditionModel();
             conditionModel.setSite(site);
             conditionModel.setStarttime(starttime);

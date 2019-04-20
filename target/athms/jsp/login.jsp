@@ -26,7 +26,8 @@
         <h2>登录</h2>
         <form action="userLogin.action" method="post" id="loginForm" >
             <input type="text" name="username" placeholder="请输入用户名" />
-            <input type="password" name="password" placeholder="请输入密码" />
+            <input type="password" name="password" placeholder="请输入密码" /><br/>
+            <span><font color="red">${noUser}</font></span>
             <div class="button-row">
                 <input type="submit" class="sign-in" value="登录" >
                 <input type="reset" class="reset" value="重置">

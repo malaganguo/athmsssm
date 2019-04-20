@@ -397,7 +397,7 @@
             url:'<%=request.getContextPath()%>/addSite.action',
             async: false,
             data: params,
-            dataType: 'json',
+            // dataType: 'json',
             error: function(request)
             {
                 console.log(" authorUsers ajax error");
@@ -405,9 +405,11 @@
             success: function(data)
             {
                 selectAllSite();
-                console.log("data"+data)
-                if(null != data){
+                console.log("data:"+data)
+                if("true" == data){
                     $("#addSiteModal").modal('hide');
+                }else{
+                    alert("站点已存在");
                 }
             }
         });

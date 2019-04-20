@@ -42,7 +42,33 @@ public class DataAnalysisController {
         System.out.println("conditionModelController:"+conditionModel);
 
         List<Object> result = dataAnalysisService.selectAllAboutTemperatureResult(conditionModel);
-        LOGGER.debug("##Data analysis result:"+result);
+        LOGGER.debug("##Data temperature analysis result:"+result);
         return result;
     }
+
+    @RequestMapping("/getHumAnalysisResult.action")
+    @ResponseBody
+    public List<Object> getHumAnalysisResult(HttpServletRequest request, AnalysisConditionModel conditionModel){
+        //接收参数
+        String site = request.getParameter("site");
+        String analysisScope = request.getParameter("analysisScope");
+        String starttime = request.getParameter("starttime");
+        String endtime = request.getParameter("endtime");
+        String maxthreshold = request.getParameter("maxthreshold");
+        String minthreshold = request.getParameter("minthreshold");
+        starttime = FormatTimeUtils.formatTimepicker(starttime);
+        endtime = FormatTimeUtils.formatTimepicker(endtime);
+
+        conditionModel.setSite(site);
+        conditionModel.setAnalysisScope(analysisScope);
+        conditionModel.setStarttime(starttime);
+        conditionModel.setEndtime(endtime);
+        conditionModel.setMaxThreshold(maxthreshold);
+        conditionModel.setMinThreshold(minthreshold);
+
+        List<Object> result = dataAnalysisService.selectAllAboutHumidityResult(conditionModel);
+        LOGGER.debug("##Data humidity analysis result:"+result);
+        return result;
+    }
+
 }

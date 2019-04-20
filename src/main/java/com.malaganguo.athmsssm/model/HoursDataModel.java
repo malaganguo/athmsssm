@@ -7,6 +7,25 @@ public class HoursDataModel {
     private String date ;
     private String temperature;
     private String humidity;
+    private String siteName;
+
+    @Override
+    public String toString() {
+        return "HoursDataModel{" +
+                "date='" + date + '\'' +
+                ", temperature='" + temperature + '\'' +
+                ", humidity='" + humidity + '\'' +
+                ", siteName='" + siteName + '\'' +
+                '}';
+    }
+
+    public String getSiteName() {
+        return siteName;
+    }
+
+    public void setSiteName(String siteName) {
+        this.siteName = siteName;
+    }
 
     public String getDate() {
         return date;
@@ -32,12 +51,5 @@ public class HoursDataModel {
         this.humidity = humidity;
     }
 
-    @Override
-    public String toString() {
-        return "HoursDataModel{" +
-                "date='" + date + '\'' +
-                ", temperature='" + temperature + '\'' +
-                ", humidity='" + humidity + '\'' +
-                '}';
-    }
+
 }

@@ -4,9 +4,18 @@ public class SiteModel {
 
     private int siteId;
     private String siteName;
+    private String siteTable;
     private String siteArea;
     private String addPerson;
     private String addTime;
+
+    public String getSiteTable() {
+        return siteTable;
+    }
+
+    public void setSiteTable(String siteTable) {
+        this.siteTable = siteTable;
+    }
 
     public String getAddTime() {
         return addTime;
