@@ -63,4 +63,14 @@ public class DataQueryController {
         }
         return "success";
     }
+
+    @RequestMapping("/minuteDataSelect.action")
+    @ResponseBody
+    public String minuteDataSelect(HttpServletRequest request){
+        String site = request.getParameter("site");
+        String date = request.getParameter("date");
+        System.out.println("###site:"+site+",date:"+date);
+        dataQueryService.selectMinuteData(site,date);
+        return null;
+    }
 }

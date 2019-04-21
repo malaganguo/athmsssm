@@ -28,4 +28,8 @@
         DELETE FROM ${site} WHERE DATE = #{date}
     </delete>
 
+    <select id="minuteDataSelect" parameterType="String" resultType="com.malaganguo.athmsssm.model.DataQueryChartModel">
+        SELECT DISTINCT minutes,temperature,humidity FROM ${site} WHERE DATE = #{date};
+    </select>
+
 </mapper>

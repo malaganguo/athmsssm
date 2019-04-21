@@ -99,21 +99,22 @@
 				  	</div>
 				  	
 				  <div class="row">
-				  	<div class="span10">
+				  	<div class="span5">
 				  		<div class="slate">
 							<div class="page-header">
-								<div class="btn-group pull-right" >
+								<%--<div class="btn-group pull-right" >
 									<button class="btn dropdown-toggle" data-toggle="dropdown">
 										<i class="icon-download-alt"></i> 下载
-										<span class="caret"></span>										 
+										<span class="caret"></span>
 									</button>
 									<ul class="dropdown-menu">
 										<li><a href="">CSV</a></li>
 										<li><a href="">Excel</a></li>
 										<li><a href="">PDF</a></li>
 									</ul>
-								</div>
-								<h2>查询结果</h2>
+								</div>--%>
+								<%--<h2>查询结果</h2>--%>
+                                <%--<button class="btn btn-small btn-info" data-toggle="modal" data-target="#addSiteModal" onclick="createChart()">图表查看</button>--%>
 							</div>
 							
                             <table class="table" id="dataList">
@@ -130,8 +131,28 @@
 
 						</tbody>
 						</table>
-							
 							<div class="span10 ">
+                                <div class="modal fade" id="addSiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title" id="myModalLabel">
+                                                    图表展示
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div id="chartContaina"  style="min-width: 550px; min-height: 400px; float:left"></div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                </button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal -->
+                                </div>
 				
 					<%--<div class="pagination pull-center">
 						<ul>
@@ -167,6 +188,9 @@
                             </div>
 						</div>
 				  	</div>
+                      <div class="span5">
+                          <div id="container"  style="min-width: 550px; min-height: 400px; float:left"></div>
+                      </div>
 				</div>
               </div>
             </div>
@@ -184,6 +208,12 @@
 <script src="<%=request.getContextPath()%>/assets/js/jquery.flot.resize.js"></script>
 <script src="<%=request.getContextPath()%>/assets/js/datetime/bootstrap-datetimepicker.js" ></script>
 <script src="<%=request.getContextPath()%>/assets/js/datetime/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://img.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script src="https://img.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script>
+
+</script>
 <script type="text/javascript">
     $('.form_date').datetimepicker({
         language: 'zh-CN',
@@ -216,27 +246,108 @@
             },
             success: function(data)
             {
+                console.log(data);
                 if(null == data || "" == data){
                     alsert("查无结果！");
                     return ;
 				}
                 dataQueryResult = data;
                 insertResultIntoTable(data);
+                var date = new Array();
+                var temperature = new Array();
+                var humidity = new Array();
+                for(var i=0;i<data.length;i++){
+                    date[i] = data[i].date;
+                    temperature[i] = parseInt(data[i].temperature);
+                    humidity[i] = parseInt(data[i].humidity);
+                }
+                showChart(date,temperature,humidity);
             }
         });
     });
+    function showChart(date,temperature,humidity) {
+        Highcharts.chart('container', {
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: '查询时间内的温温度和湿度'
+            },
+
+            xAxis: [{
+                categories: date,
+                crosshair: true
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    format: '{value}°C',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: '温度',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: '湿度',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    format: '{value} %RH',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                opposite: true
+            }],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 50,
+                verticalAlign: 'top',
+                y: 0,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            series: [{
+                name: '相对湿度',
+                type: 'column',
+                yAxis: 1,
+                data: humidity,
+                tooltip: {
+                    valueSuffix: ' %'
+                }
+            }, {
+                name: '温度',
+                type: 'spline',
+                data: temperature,
+                tooltip: {
+                    valueSuffix: '°C'
+                }
+            }]
+        });
+    }
     function insertResultIntoTable(data) {
         $("#dataList tbody").html("");
         if(${user.status == 1}) {
             for (var i = 0; i < data.length; i++) {
-
+                var site = $("#sitechose option:selected").val().substring(0,6);
                 var labelIntbody = "<tr>\n" +
                     "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].date + "</a></td>\n" +
-                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].siteName + "</a></td>\n" +
+                    "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + $("#sitechose option:selected").val() + "</a></td>\n" +
                     "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].temperature + "℃</a></td>\n" +
                     "                                <td><a href=\"#\">" + data[i].humidity + "RH</a></td>\n" +
                     "\t\t\t\t\t\t\t\t<td>\n" +
-                    "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
+                    // "\t\t\t\t\t\t\t\t\t<button class=\"btn btn-small btn-info\" data-toggle=\"modal\" data-target=\"#addSiteModal\" onclick='createChart("+site+","+data[i].date+")'>图表查看</button>\n" +
                     "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-danger\" href=\"javascript:void(0);\" onclick='deleteData(" + data[i].date + ")'>删除</a>\n" +
                     "\t\t\t\t\t\t\t\t</td>\n" +
                     "\t\t\t\t\t\t\t</tr>";
@@ -252,7 +363,7 @@
                     "\t\t\t\t\t\t\t\t<td><a href=\"#\">" + data[i].temperature + "℃</a></td>\n" +
                     "                                <td><a href=\"#\">" + data[i].humidity + "RH</a></td>\n" +
                     "\t\t\t\t\t\t\t\t<td>\n" +
-                    "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
+                    // "\t\t\t\t\t\t\t\t\t<a class=\"btn btn-small btn-info\" href=\"#\">图表查看</a>\n" +
                     "\t\t\t\t\t\t\t\t</td>\n" +
                     "\t\t\t\t\t\t\t</tr>";
 
@@ -288,6 +399,29 @@
 		}
     }
 
+    function createChart() {
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url:'<%=request.getContextPath()%>/selectAllSite.action',
+            async: false,
+            data: {},
+            dataType: 'json',
+            error: function(request)
+            {
+                console.log("ajax error");
+            },
+            success: function(data)
+            {
+                $("#sitechose").append("<option value='' selected>--请选择--</option>");
+                $("#sitechose").append("<option value='"+data[0].siteTable+"_hourdata' selected> "+data[0].siteName+"点 </option>");
+                for(var i=1;i<data.length;i++){
+                    $("#sitechose").append("<option value='"+data[i].siteTable+"_hourdata'> "+data[i].siteName+"点 </option>");
+                }
+            }
+        });
+    }
+
 </script>
 <script>
     $.ajax({
@@ -311,5 +445,80 @@
         }
     });
 </script>
+<%--<script>
+
+    var chart = Highcharts.chart('chartContain', {
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: '东京月平均温度和降雨量'
+        },
+        subtitle: {
+            text: '数据来源: WorldClimate.com'
+        },
+        xAxis: [{
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            crosshair: true
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            title: {
+                text: '温度',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: '降雨量',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} mm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 120,
+            verticalAlign: 'top',
+            y: 100,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: '降雨量',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            tooltip: {
+                valueSuffix: ' mm'
+            }
+        }, {
+            name: '温度',
+            type: 'spline',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+            tooltip: {
+                valueSuffix: '°C'
+            }
+        }]
+    });
+</script>--%>
 </body>
 </html>

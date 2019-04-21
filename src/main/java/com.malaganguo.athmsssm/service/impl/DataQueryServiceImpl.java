@@ -2,6 +2,7 @@ package com.malaganguo.athmsssm.service.impl;
 
 import com.malaganguo.athmsssm.dao.IDataQueryDao;
 import com.malaganguo.athmsssm.dao.ISiteDao;
+import com.malaganguo.athmsssm.model.DataQueryChartModel;
 import com.malaganguo.athmsssm.model.HoursDataConditionModel;
 import com.malaganguo.athmsssm.model.HoursDataModel;
 import com.malaganguo.athmsssm.service.IDataQueryService;
@@ -37,4 +38,7 @@ public class DataQueryServiceImpl implements IDataQueryService {
     }
 
 
+    public List<DataQueryChartModel> selectMinuteData(String site, String date) {
+        return DataQueryDao.minuteDataSelect(site,date);
+    }
 }
